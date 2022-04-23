@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Hampo Whiskey Bar</title>
+{% endblock %}
+
+{% block body %}
+<div class="content1">
+    <h1 style="text-align: center">Whiskey Collection</h1>
+    {% if collection|length < 1 %}
+    <h4 style="text-align: center">There are no tasks.</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Bottle</th>
+            <th>Average Rating</th>
+            <th>Date Added</th>
+            <th>Date Killed</th>
+        </tr>
+        {% for bot in collection %}
+            <tr>
+                <td>{{ bot.bottle }}</td>
+                <td>{{ bot.avg_rating }}</td>
+                <td>{{ bot.date_added }}</td>
+                <td>{{ bot.date_killed }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    
+</div>
+<div class="content">
+    <h1 style="text-align: center">Whiskey Ratings</h1>
+    {% if ratings|length < 1 %}
+    <h4 style="text-align: center">There are no tasks.</h4>
+    {% else %}
+    <table>
+        <tr>
+            <th>Whiskey</th>
+            <th>Ratings</th>
+            <th>Date</th>
+        </tr>
+        {% for rate in ratings %}
+            <tr>
+                <td>{{ rate.whiskey }}</td>
+                <td>{{ rate.rating }}</td>
+                <td>{{ rate.date_created }}</td>
+            </tr>
+        {% endfor %}
+    </table>
+    {% endif %}
+    
+    
+</div>
+<div class="form1">
+    <form action="/" method="POST">
+        <input type="text" name="bottle" id="bottle">
+        <input type="submit" value="Add Bottle">
+    </form>
+</div>
+<div class="form">
+    <form action="/" method="POST">
+        <input type="text" name="whiskey" id="whiskey">
+        <input type="text" name="rating" id="rating">
+        <input type="submit" value="Add Rating">
+    </form>
+</div>
+
+{% endblock %}
