@@ -7,8 +7,6 @@
 {% block body %}
 <div class="content">
     <h1 style="text-align: center">Whiskey Collection</h1>
-    {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
-        {% else %}
         <h2 style="text-align: center">Add a New Bottle</h2>
         <div class="bottleinput">
             <form action="/collection" method="POST">
@@ -36,6 +34,8 @@
                 </section>
             </form>
         </div>
+        {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
+        {% else %}
         <h2 style="text-align: center">Full Collection</h2>
         <table>
             <tr>

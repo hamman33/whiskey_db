@@ -7,8 +7,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
 db = SQLAlchemy(app)
 
 class Ratings(db.Model):
-    whiskey = db.Column(db.String(200), primary_key=True)
+    rating_num = db.Column(db.Integer, primary_key=True)
+    bottle_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
+    drinker = db.Column(db.String(200))
     date_drank = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
@@ -67,25 +69,37 @@ def proof_round(p):
 
 @app.route('/rate/<string:id>', methods=['GET', 'POST'])
 def rate(id):
-    bottle = Collection.query.get_or_404(id)
-
+    bottle_obj = Collection.query.get_or_404(id)
     if request.method == 'POST':
-        task.content = request.form['content']
+        rating = request.form['rating']
+        if(not rating.isdigit()):
+            return 'Please enter a number from 1-10'
+        
+        new_rating = Ratings(rating_num=len(Ratings.query.all()), bottle_id=id, rating=int(rating))
         try:
+            db.session.add(new_rating)
             db.session.commit()
-            return redirect('/')
         except:
-            return 'There was an issue updating your task'
+            return 'There was an issue adding the rating'
+                
+        #update avg ratings
+        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+        all_ratings_num = [rate.rating for rate in all_ratings]
+        print(all_ratings_num)
 
+        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 2)
+        db.session.commit()
+
+        return redirect('/')
     else:
-        return render_template('rate.html', bottle=bottle)
+        return render_template('rate.html', bottle=bottle_obj)
 
 @app.route('/delete/<string:id>')
 def delete(id):
-    bottle = Collection.query.get_or_404(id)
+    bottle_obj = Collection.query.get_or_404(id)
 
     try:
-        db.session.delete(bottle)
+        db.session.delete(bottle_obj)
         db.session.commit()
         return redirect('/')
     except:

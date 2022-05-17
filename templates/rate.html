@@ -6,11 +6,12 @@
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Please rate {{ bottle.bottle }} from 1-5</h1>
+    <h1 style="text-align: center">Please rate {{ bottle.bottle }} from 1-10</h1>
 
-    <div class="form">
-        <form action="/rate/{{bottle.bottle}}" method="POST">
-            <input type="text" name="content" id="content">
+    <div class="bottleinput">
+        <form action="/rate/{{bottle.bottle_id}}" method="POST">
+            <label for="rating"> Rating</label>
+            <input type="text" name="rating" id="rating">
             <input type="submit" value="Rate">
         </form>
     </div>
