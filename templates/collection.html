@@ -62,11 +62,11 @@
                 <td>{{ bot.date_added.strftime("%b %-d, %Y") }}</td>
                 <td>{{ bot.date_killed }}</td>
                 <td>
-                    <a href="/edit/{{bot.bottle}}">Edit</a>
+                    <a href="/edit/{{bot.bottle_id}}">Edit</a>
                     <a> | </a>
-                    <a href="/kill/{{bot.bottle}}">Kill</a>
+                    <a href="/kill/{{bot.bottle_id}}">Kill</a>
                     <a> | </a>
-                    <a href="/delete/{{bot.bottle}}">Remove</a>
+                    <a href="/delete/{{bot.bottle_id}}">Remove</a>
                 </td>
             </tr>
             {% endfor %}

@@ -97,9 +97,12 @@ def rate(id):
 @app.route('/delete/<string:id>')
 def delete(id):
     bottle_obj = Collection.query.get_or_404(id)
+    ratings = Ratings.query.filter_by(bottle_id=id)
 
     try:
         db.session.delete(bottle_obj)
+        for rat in ratings:
+            db.session.delete(rat)
         db.session.commit()
         return redirect('/')
     except:
