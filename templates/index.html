@@ -6,7 +6,7 @@
 
 {% block body %}
 <div class="content">
-    <h1 style="text-align: center">Whiskey Collection</h1>
+    <h1 style="text-align: center">Hampo Whiskey Bar</h1>
     {% if collection|length < 1 %}
     <h4 style="text-align: center">The collection is empty.</h4>
     {% else %}
@@ -15,10 +15,9 @@
             <th>Bottle</th>
             <th>Type</th>
             <th>Proof</th>
+            <th>Date Added</th>
             <th>Average Rating</th>
             <th>Rate</th>
-            <th>Date Added</th>
-            <th>Date Killed</th>
             
         </tr>
         {% for bot in collection %}
@@ -31,25 +30,15 @@
                     {{bot.proof}}
                     {% endif %}
                 </td>
+                <td>{{ bot.date_added.strftime("%b %-d, %Y") }}</td>
                 <td>{{ bot.avg_rating }}</td>
                 <td>
                     <a href="/rate/{{bot.bottle}}">Rate</a>
                 </td>
-                <td>{{ bot.date_added }}</td>
-                <td>{{ bot.date_killed }}</td>
             </tr>
         {% endfor %}
     </table>
-    {% endif %}
-    <div class="form">
-        <form action="/" method="POST">
-            <input type="text" name="bottle" id="bottle">
-            <input type="text" name="type" id="type">
-            <input type="text" name="proof" id="proof">
-            <input type="submit" value="Add Bottle">
-        </form>
-    </div>
-    
+    {% endif %}    
 </div>
 
 {% endblock %}

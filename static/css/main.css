@@ -1,24 +1,41 @@
-html {
-    margin: 0;
-    font-family: sans-serif;
-    background-image: url("collection.jpg");
-    background-repeat: no-repeat;
-    background-position: center auto;
-    background-size: cover;
-}
+body {
+    background-color: transparent;
+    background-image: url("middle.jpg"), url("edge.jpg");
+    background-position: 50% 0px, 50% 0px;
+    background-size: contain, 125px;
+    background-repeat: repeat-y, repeat;
+    font-family: Arial, 'Helvetica Neue', Helvetica, sans-serif;
+    color: #333;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  
+  .body {
+    background-color: #000;
+    background-image: url("middle.jpg");
+    background-position: 50% 0px;
+    background-size: auto;
+    background-repeat: repeat-y;
+    background-attachment: fixed;
+  }
+  
+  .background {
+    background-size: auto, auto;
+    background-repeat: repeat-y, repeat;
+    background-attachment: scroll, scroll;
+  }
 
-.content {
-    margin: 0 auto;
-    width: 800px;
-}
 
 table, td, th {
     border: 1px solid #aaa;
+    text-align: center;
 }
 
 table {
     border-collapse: collapse;
-    width: 100%;
+    width: 30%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 th {
@@ -30,10 +47,14 @@ td {
     padding: 5px;
 }
 
-.form {
-    margin-top: 20px;
+input, label {
+  display:block;
 }
 
-#content {
-    width: 70%;
+.bottleinput {
+    margin-top: 20px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: 30%;
 }

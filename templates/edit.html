@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Edit Bottle</title>
+{% endblock %}
+
+{% block body %}
+<div class="content">
+    <h1 style="text-align: center">Editing {{ bottle.bottle }}</h1>
+    <table>
+        <tr>
+            <th>Bottle</th>
+            <th>Type</th>
+            <th>Proof</th>
+            <th>Average Rating</th>
+            <th>Date Added</th>
+            <th>Date Killed</th>
+            
+        </tr>
+        <tr>
+            <td>{{ bottle.bottle }}</td>
+            <td>{{ bottle.whiskey_type }}</td>
+            <td> {% if bottle.proof.is_integer() %}
+                {{ '%d' % bottle.proof }}
+                {% else %}
+                {{bottle.proof}}
+                {% endif %}
+            </td>
+            <td>{{ bottle.avg_rating }}</td>
+            <td>{{ bottle.date_added.strftime("%b %-d, %Y") }}</td>
+            <td>{{ bottle.date_killed }}</td>
+        </tr>
+    </table>
+    <div class="form">
+        <form action="/edit/{{bottle.bottle}}" method="POST">
+            <input type="text" name="bottle" id="bottle">
+            <input type="text" name="type" id="type">
+            <input type="text" name="proof" id="proof">
+            <input type="submit" value="Edit">
+        </form>
+    </div>
+</div>
+{% endblock %}
