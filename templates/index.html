@@ -5,7 +5,7 @@
 {% endblock %}
 
 {% block body %}
-<div class="content">
+<div class="maindiv">
     <h1 style="text-align: center">Hampo Whiskey Bar</h1>
     {% if collection|length < 1 %}
     <h4 style="text-align: center">The collection is empty.</h4>
@@ -15,6 +15,7 @@
             <th>Bottle</th>
             <th>Type</th>
             <th>Proof</th>
+            <th>Owner</th>
             <th>Date Added</th>
             <th>Average Rating</th>
             <th>Rate</th>
@@ -30,6 +31,7 @@
                     {{bot.proof}}
                     {% endif %}
                 </td>
+                <td>{{ bot.owner }}</td>
                 <td>{{ bot.date_added.strftime("%b %-d, %Y") }}</td>
                 <td>{{ bot.avg_rating }}</td>
                 <td>

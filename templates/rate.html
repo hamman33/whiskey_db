@@ -5,10 +5,10 @@
 {% endblock %}
 
 {% block body %}
-<div class="content">
+<div class="maindiv">
     <h1 style="text-align: center">Please rate {{ bottle.bottle }} from 1-10</h1>
 
-    <div class="bottleinput">
+    <div class="center">
         <form action="/rate/{{bottle.bottle_id}}" method="POST">
             <label for="rating"> Rating</label>
             <input type="text" name="rating" id="rating">
