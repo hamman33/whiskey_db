@@ -108,8 +108,8 @@ def rate(id):
     else:
         return render_template('rate.html', bottle=bottle_obj)
 
-@app.route('/delete/<string:id>')
-def delete(id):
+@app.route('/deletebottle/<string:id>')
+def deletebottle(id):
     bottle_obj = Collection.query.get_or_404(id)
     ratings = Ratings.query.filter_by(bottle_id=id)
 
@@ -122,27 +122,38 @@ def delete(id):
     except:
         return 'There was a problem deleting the bottle'
 
-@app.route('/edit/<string:id>', methods=['GET', 'POST'])
-def edit(id):
+@app.route('/editbottle/<string:id>', methods=['GET', 'POST'])
+def editbottle(id):
     bottle = Collection.query.get_or_404(id)
-
+    print("here")
     if request.method == 'POST':
         bottle.bottle = request.form['bottle']
         bottle.whiskey_type = request.form['type']
         bottle.proof = request.form['proof']
+        bottle.owner = request.form['owner']
         try:
-            db.session.delete(bottle)
             db.session.commit()
             return redirect('/collection')
         except:
-            return 'There was a problem deleting the bottle'
+            return 'There was a problem editing the bottle'
     else:
-        return render_template("edit.html", bottle=bottle)
+        return render_template("editbottle.html", bottle=bottle)
+
+@app.route('/deleterating/<string:id>')
+def deleterating(id):
+    rating_obj = Ratings.query.get_or_404(id)
+
+    try:
+        db.session.delete(rating_obj)
+        db.session.commit()
+        return redirect('/ratings')
+    except:
+        return 'There was a problem deleting the rating'
  
 
 def main():
-    app.run(debug=False, host="0.0.0.0")
-    db.create_all()
+    app.run(debug=True, host="0.0.0.0")
+    #db.create_all()
 
 if __name__ == "__main__":
     main()
