@@ -32,8 +32,6 @@ class Collection(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    print(max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))}))
-    print({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))})
     #ratings = Ratings.query.order_by(Ratings.date_drank).all()
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle).all()
     return render_template('index.html', collection=collection)
