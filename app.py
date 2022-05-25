@@ -32,6 +32,8 @@ class Collection(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    print(max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))}))
+    print({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))})
     #ratings = Ratings.query.order_by(Ratings.date_drank).all()
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle).all()
     return render_template('index.html', collection=collection)
@@ -40,7 +42,7 @@ def index():
 def collection():
     print(request.method)
     if request.method == 'POST':
-        bottle_id = len(Collection.query.all())
+        bottle_id = max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))} or [0])+1
         print(bottle_id)
         bottle = request.form['bottle']
         w_type = request.form['type']
@@ -86,10 +88,15 @@ def rate(id):
     bottle_obj = Collection.query.get_or_404(id)
     if request.method == 'POST':
         rating = request.form['rating']
-        if(not rating.isdigit()):
-            return 'Please enter a number from 1-10'
+        try:
+            rat = float(rating)
+        except:
+            return 'Please enter a number from 0-10'
+
+        if(float(rating) > 10 or float(rating) < 0):
+            return 'Please enter a number from 0-10'
         
-        new_rating = Ratings(rating_num=len(Ratings.query.all()), bottle_id=id, bottle= bottle_obj.bottle, rating=int(rating))
+        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_id=id, bottle=bottle_obj.bottle, rating=float(rating))
         try:
             db.session.add(new_rating)
             db.session.commit()
