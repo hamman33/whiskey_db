@@ -7,7 +7,7 @@
 {% block body %}
 <div class="maindiv">
     <h1 style="text-align: center">Whiskey Collection Ratings</h1>
-        {% if ratings|length < 1 %} <h4 style="text-align: center">There are no ratings.</h4>
+    {% if ratings|length < 1 %} <h4 style="text-align: center">There are no ratings.</h4>
         {% else %}
         <h2 style="text-align: center">Full Ratings</h2>
         <table>
@@ -15,15 +15,21 @@
                 <th>Bottle</th>
                 <th>Drinker</th>
                 <th>Rating</th>
+                <th>Blind</th>
                 <th>Date</th>
                 <th>Edit</th>
 
             </tr>
             {% for rate in ratings %}
             <tr>
-                <td>{{ rate.bottle }}</td>
+                <td>{{ rate.bottle_name }}</td>
                 <td>{{ rate.drinker }}</td>
                 <td>{{ rate.rating }}</td>
+                {% if rate.blind %}
+                <td>X</td>
+                {% else %}
+                <td></td>
+                {% endif %}
                 <td>{{ rate.date_drank.strftime("%b %-d, %Y") }}</td>
                 <td>
                     <a href="/editrating/{{rate.rating_num}}">Edit</a>

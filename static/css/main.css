@@ -1,4 +1,4 @@
-body {
+/*body {
   background-color: transparent;
   background-image: url("middle.jpg"), url("edge.jpg");
   background-position: 50% 0px, 50% 0px;
@@ -9,36 +9,31 @@ body {
   font-size: 14px;
   line-height: 20px;
 }
-
-.body {
+*/
+.background {
   background-color: #000;
   background-image: url("middle.jpg");
   background-position: 50% 0px;
-  background-size: auto;
+  background-size: contain;
   background-repeat: repeat-y;
   background-attachment: fixed;
 }
 
-.background {
-  background-size: auto, auto;
-  background-repeat: repeat-y, repeat;
-  background-attachment: scroll, scroll;
-}
 .maindiv {
-    margin: auto;
-    width: 750px;
-    padding: 10px;
+    margin-left: 15%;
+    margin-right: 15%;
   }
 
 table, td, th {
     border: 1px solid #aaa;
     text-align: center;
+    font-size: 0.9em;
 }
 
 table {
     border-collapse: collapse;
-    margin-left: auto;
-    margin-right: auto;
+    margin-left:0%;
+    width: 100%;
 }
 
 th {

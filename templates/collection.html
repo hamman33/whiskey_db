@@ -7,39 +7,34 @@
 {% block body %}
 <div class="maindiv">
     <h1 style="text-align: center">Whiskey Collection</h1>
-        <h2 style="text-align: center">Add a New Bottle</h2>
-        <div class="bottleinput">
-            <form action="/collection" method="POST">
-                <section>
+    <h2 style="text-align: center">Add a New Bottle</h2>
+    <div class="bottleinput">
+        <form action="/collection" method="POST">
+            <section>
 
-                    <div style="float:left;margin-right:20px;">
-                        <label for="bottle">Bottle</label>
-                        <input id="bottle" type="text" value="" name="bottle" size="30">
-                    </div>
+                <div style="float:left;margin-right:20px;">
+                    <label for="bottle_name">Bottle</label>
+                    <input id="bottle_name" type="text" value="" name="bottle_name" size="20">
+                </div>
 
-                    <div style="float:left;margin-right:20px;">
-                        <label for="type">Type</label>
-                        <input id="type" type="text" value="" name="type">
-                    </div>
+                <div style="float:left;margin-right:20px;">
+                    <label for="type">Type</label>
+                    <input id="type" type="text" value="" name="type">
+                </div>
 
-                    <div style="float:left;">
-                        <label for="proof">Proof</label>
-                        <input id="proof" type="text" value="" name="proof">
-                    </div>
+                <div style="float:left;">
+                    <label for="proof">Proof</label>
+                    <input id="proof" type="text" value="" name="proof">
+                </div>
 
-                    <br style="clear:both;" />
-                    <div style="float:left;">
-                        <label for="owner">Owner</label>
-                        <input id="owner" type="text" value="" name="owner">
-                    </div>
-                    <br style="clear:both;" />
-                    <div style="margin-top:20px">
-                        <input type="submit" value="Add Bottle">
-                    </div>
-                </section>
-            </form>
-        </div>
-        {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
+                <br style="clear:both;" />
+                <div style="margin-top:20px">
+                    <input type="submit" value="Add Bottle">
+                </div>
+            </section>
+        </form>
+    </div>
+    {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
         {% else %}
         <h2 style="text-align: center">Full Collection</h2>
         <table>
@@ -48,15 +43,12 @@
                 <th>Type</th>
                 <th>Proof</th>
                 <th>Average Rating</th>
-                <th>Owner</th>
-                <th>Date Added</th>
-                <th>Date Killed</th>
                 <th>Edit</th>
 
             </tr>
             {% for bot in collection %}
             <tr>
-                <td>{{ bot.bottle }}</td>
+                <td>{{ bot.bottle_name }}</td>
                 <td>{{ bot.whiskey_type }}</td>
                 <td> {% if bot.proof.is_integer() %}
                     {{ '%d' % bot.proof }}
@@ -65,15 +57,12 @@
                     {% endif %}
                 </td>
                 <td>{{ bot.avg_rating }}</td>
-                <td>{{ bot.owner }}</td>
-                <td>{{ bot.date_added.strftime("%b %-d, %Y") }}</td>
-                <td>{{ bot.date_killed }}</td>
                 <td>
-                    <a href="/editbottle/{{bot.bottle_id}}">Edit</a>
+                    <a href="/editbottle/{{bot.bottle_name}}">Edit</a>
                     <a> | </a>
-                    <a href="/kill/{{bot.bottle_id}}">Kill</a>
+                    <a href="/kill/{{bot.bottle_name}}">Kill</a>
                     <a> | </a>
-                    <a href="/deletebottle/{{bot.bottle_id}}">Remove</a>
+                    <a href="/deletebottle/{{bot.bottle_name}}">Remove</a>
                 </td>
             </tr>
             {% endfor %}

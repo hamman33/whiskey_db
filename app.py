@@ -1,3 +1,4 @@
+from operator import truediv
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
@@ -8,45 +9,38 @@ db = SQLAlchemy(app)
 
 class Ratings(db.Model):
     rating_num = db.Column(db.Integer, primary_key=True)
-    bottle_id = db.Column(db.Integer, nullable=False)
-    bottle = db.Column(db.String(200))
+    bottle_name = db.Column(db.String(200))
     rating = db.Column(db.Integer, nullable=False)
     drinker = db.Column(db.String(50))
     date_drank = db.Column(db.DateTime, default=datetime.utcnow)
+    blind = db.Column(db.Boolean, default=False)
 
     def __repr__(self):
         return '<whiskey %r>' % self.whiskey
 
 class Collection(db.Model):
-    bottle_id = db.Column(db.Integer, primary_key=True)
-    bottle = db.Column(db.String(200))
-    owner = db.Column(db.String(50))
+    bottle_name = db.Column(db.String(200), primary_key=True)
     whiskey_type = db.Column(db.String(50), default=0)
     proof = db.Column(db.Float, default=0)
     avg_rating = db.Column(db.Float, default=0)
-    date_added = db.Column(db.DateTime, default=datetime.utcnow)
-    date_killed = db.Column(db.DateTime)
+    price = db.Column(db.Float, default=0)
 
     def __repr__(self):
         return '<bottle %r>' % self.bottle
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    #ratings = Ratings.query.order_by(Ratings.date_drank).all()
-    collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle).all()
+    collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection)
 
 @app.route('/collection', methods=['POST', 'GET'])
 def collection():
     print(request.method)
     if request.method == 'POST':
-        bottle_id = max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))} or [0])+1
-        print(bottle_id)
-        bottle = request.form['bottle']
+        bottle_name = request.form['bottle_name']
         w_type = request.form['type']
         proof = request.form['proof']
-        owner = request.form['owner']
-        new_bottle = Collection(bottle_id=bottle_id, bottle=bottle, whiskey_type=w_type, proof=proof, owner=owner)
+        new_bottle = Collection(bottle_name=bottle_name, whiskey_type=w_type, proof=proof)
         try:
             db.session.add(new_bottle)
             db.session.commit()
@@ -55,7 +49,7 @@ def collection():
             return 'There was an issue adding to your collection'
     else:
         ratings = Ratings.query.order_by(Ratings.date_drank).all()
-        collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle).all()
+        collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
         return render_template('collection.html', ratings=ratings, collection=collection)
 
 @app.route('/ratings', methods=['POST', 'GET'])
@@ -66,7 +60,7 @@ def ratings():
         pass
     else:
         ratings = Ratings.query.order_by(Ratings.date_drank).all()
-        collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle).all()
+        collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
         return render_template('ratings.html', ratings=ratings, collection=collection)
 
 
@@ -81,11 +75,19 @@ def proof_round(p):
         return int(p)
     return p
 
-@app.route('/rate/<string:id>', methods=['GET', 'POST'])
-def rate(id):
-    bottle_obj = Collection.query.get_or_404(id)
+@app.route('/rate/<string:b_name>', methods=['GET', 'POST'])
+def rate(b_name):
+    bottle_obj = Collection.query.get_or_404(b_name)
     if request.method == 'POST':
         rating = request.form['rating']
+        name = request.form['name']
+        blind = request.form['blind']
+
+        if(blind == 'on'):
+            blind = True
+        else:
+            blind = False
+
         try:
             rat = float(rating)
         except:
@@ -94,7 +96,7 @@ def rate(id):
         if(float(rating) > 10 or float(rating) < 0):
             return 'Please enter a number from 0-10'
         
-        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_id=id, bottle=bottle_obj.bottle, rating=float(rating))
+        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_name=bottle_obj.bottle_name, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
             db.session.commit()
@@ -102,7 +104,7 @@ def rate(id):
             return 'There was an issue adding the rating'
                 
         #update avg ratings
-        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+        all_ratings = Ratings.query.filter_by(bottle_name=b_name).all()
         all_ratings_num = [rate.rating for rate in all_ratings]
         print(all_ratings_num)
 
@@ -158,7 +160,7 @@ def deleterating(id):
 
 def main():
     app.run(debug=True, host="0.0.0.0")
-    #db.create_all()
+    db.create_all()
 
 if __name__ == "__main__":
     main()

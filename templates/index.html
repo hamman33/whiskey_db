@@ -1,46 +1,42 @@
 {% extends 'base.html' %}
 
 {% block head %}
-<title>Hampo Whiskey Bar</title>
+<title>The Boys Whiskey Collection</title>
 {% endblock %}
 
 {% block body %}
 <div class="maindiv">
-    <h1 style="text-align: center">Hampo Whiskey Bar</h1>
-    {% if collection|length < 1 %}
-    <h4 style="text-align: center">The collection is empty.</h4>
-    {% else %}
-    <table>
-        <tr>
-            <th>Bottle</th>
-            <th>Type</th>
-            <th>Proof</th>
-            <th>Owner</th>
-            <th>Date Added</th>
-            <th>Average Rating</th>
-            <th>Rate</th>
-            
-        </tr>
-        {% for bot in collection %}
-            <tr>
-                <td>{{ bot.bottle }}</td>
-                <td>{{ bot.whiskey_type }}</td>
-                <td> {% if bot.proof.is_integer() %}
-                    {{ '%d' % bot.proof }}
-                    {% else %}
-                    {{bot.proof}}
-                    {% endif %}
-                </td>
-                <td>{{ bot.owner }}</td>
-                <td>{{ bot.date_added.strftime("%b %-d, %Y") }}</td>
-                <td>{{ bot.avg_rating }}</td>
-                <td>
-                    <a href="/rate/{{bot.bottle_id}}">Rate</a>
-                </td>
-            </tr>
-        {% endfor %}
-    </table>
-    {% endif %}    
+    <h1 style="text-align: center">The Boys Whiskey Collection</h1>
+    {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
+        {% else %}
+        <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+        <table class="sortable">
+                <tr>
+                    <th>Bottle</th>
+                    <th>Type</th>
+                    <th>Proof</th>
+                    <th>Average Rating</th>
+                    <th>Rate</th>
+
+                </tr>
+                {% for bot in collection %}
+                <tr>
+                    <td>{{ bot.bottle_name }}</td>
+                    <td>{{ bot.whiskey_type }}</td>
+                    <td> {% if bot.proof.is_integer() %}
+                        {{ '%d' % bot.proof }}
+                        {% else %}
+                        {{bot.proof}}
+                        {% endif %}
+                    </td>
+                    <td>{{ bot.avg_rating }}</td>
+                    <td>
+                        <a href="/rate/{{bot.bottle_name}}">Rate</a>
+                    </td>
+                </tr>
+                {% endfor %}
+        </table>
+        {% endif %}
 </div>
 
 {% endblock %}
