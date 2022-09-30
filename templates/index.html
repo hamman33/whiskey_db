@@ -16,23 +16,21 @@
                     <th>Type</th>
                     <th>Proof</th>
                     <th>Average Rating</th>
-                    <th>Rate</th>
 
                 </tr>
                 {% for bot in collection %}
                 <tr>
-                    <td>{{ bot.bottle_name }}</td>
+                    <td>
+                        <a href="/rate/{{bot.bottle_name}}">{{ bot.bottle_name }}</a>
+                    </td>
                     <td>{{ bot.whiskey_type }}</td>
                     <td> {% if bot.proof.is_integer() %}
                         {{ '%d' % bot.proof }}
                         {% else %}
-                        {{bot.proof}}
+                        {{ bot.proof}}
                         {% endif %}
                     </td>
-                    <td>{{ bot.avg_rating }}</td>
-                    <td>
-                        <a href="/rate/{{bot.bottle_name}}">Rate</a>
-                    </td>
+                    <td>{{ '%.1f' % bot.avg_rating }}</td>
                 </tr>
                 {% endfor %}
         </table>

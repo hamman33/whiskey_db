@@ -108,7 +108,7 @@ def rate(b_name):
         all_ratings_num = [rate.rating for rate in all_ratings]
         print(all_ratings_num)
 
-        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 2)
+        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
         db.session.commit()
 
         return redirect('/')
