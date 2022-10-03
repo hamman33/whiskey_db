@@ -12,7 +12,7 @@
 */
 .background {
   background-color: #000;
-  background-image: url("middle.jpg");
+  background-image: url("middle_new.jpg");
   background-position: 50% 0px;
   background-size: contain;
   background-repeat: repeat-y;
@@ -20,8 +20,8 @@
 }
 
 .maindiv {
-    margin-left: 15%;
-    margin-right: 15%;
+    margin-left: 10%;
+    margin-right: 10%;
   }
 
 table, td, th {
@@ -59,4 +59,15 @@ a:visited {
   color: rgb(99, 64, 69);
   background-color: transparent;
   text-decoration: none;
+}
+
+.block {
+    display: flex;
+    justify-content: flex-start;
+    padding: 5px;
+    margin: .5rem;
+}
+
+.icon{
+  height: 200px;
 }

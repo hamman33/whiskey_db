@@ -2,6 +2,9 @@ from operator import truediv
 from flask import Flask, render_template, url_for, request, redirect
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
+from os.path import exists
+from google_images_download import google_images_download
+import os
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
@@ -81,8 +84,8 @@ def rate(b_name):
     if request.method == 'POST':
         rating = request.form['rating']
         name = request.form['name']
-        blind = request.form['blind']
-
+        blind = request.form.get('blind')
+        print(blind)
         if(blind == 'on'):
             blind = True
         else:
@@ -113,7 +116,26 @@ def rate(b_name):
 
         return redirect('/')
     else:
-        return render_template('rate.html', bottle=bottle_obj)
+        image_path = "../static/images/" + str(bottle_obj.bottle_name).replace(" ", "_").lower() + ".jpg"
+        if(not exists(image_path[1:])):
+            botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
+            args = {}
+            args["keywords"] = botname
+            args["limit"] = 1
+            args["format"] = "jpg"
+            args["output_directory"] = "static"
+            args["image_directory"] = "images"
+            args["prefix"] = botname
+
+            try:
+                response = google_images_download.googleimagesdownload()
+                absolute_image_paths = response.download(args)
+                os.rename(absolute_image_paths[0][botname][0], "/home/mjhampo/Documents/repos/whiskey_db/static/images/" + botname + ".jpg")
+            except:
+                print("cant find bottle image")
+
+        
+        return render_template('rate.html', bottle=bottle_obj, image=image_path)
 
 @app.route('/deletebottle/<string:id>')
 def deletebottle(id):

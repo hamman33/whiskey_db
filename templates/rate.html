@@ -6,18 +6,35 @@
 
 {% block body %}
 <div class="maindiv">
-    <h1 style="text-align: center">Please rate {{ bottle.bottle_name }} from 1-10</h1>
+    <h1 style="text-align: center">{{ bottle.bottle_name }}</h1>
 
+    <img class="icon" src="{{ image }}">
     <div class="center">
         <form action="/rate/{{bottle.bottle_name}}" method="POST">
-            <label for="rating"> Rating</label>
-            <input type="text" name="rating" id="rating">
-            <label for="blind"> Blind?</label>
-            <input type="checkbox" name="blind" id="blind">
-            <label for="name"> Drinker</label>
-            <input type="text" name="name" id="name">
+            <div class="block">
+                <label for="rating"> Rating </label>
+                <input type="number" name="rating" id="rating" >
+            </div>
+            <div class="block">
+                <label for="blind"> Blind? </label>
+                <input type="checkbox" name="blind" id="blind">
+            </div>
+            <div class="block">
+                <label for="name"> Drinker </label>
+                <input type="text" name="name" id="name">
+            </div>
             <input type="submit" value="Rate">
         </form>
+    </div>
+    <div>
+        <h5>0-2.9: Drain Pour</h5>
+        <h5>3-3.9: Terrible</h5>
+        <h5>4-4.9: Not Good</h5>
+        <h5>5-5.9: Good but not my jam</h5>
+        <h5>6-6.9: Decent to Pretty Good</h5>
+        <h5>7-7.9: Very Good</h5>
+        <h5>8-8.9: Great to Spectacular</h5>
+        <h5>9-9.9: Some of the best I've ever had</h5>
     </div>
 </div>
 {% endblock %}
