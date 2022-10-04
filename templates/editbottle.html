@@ -5,20 +5,17 @@
 {% endblock %}
 
 {% block body %}
-<div class="content">
+<div class="maindiv">
     <h1 style="text-align: center">Editing {{ bottle.bottle }}</h1>
     <table>
         <tr>
             <th>Bottle</th>
             <th>Type</th>
             <th>Proof</th>
-            <th>Average Rating</th>
-            <th>Date Added</th>
-            <th>Date Killed</th>
             
         </tr>
         <tr>
-            <td>{{ bottle.bottle }}</td>
+            <td>{{ bottle.bottle_name }}</td>
             <td>{{ bottle.whiskey_type }}</td>
             <td> {% if bottle.proof.is_integer() %}
                 {{ '%d' % bottle.proof }}
@@ -26,35 +23,27 @@
                 {{bottle.proof}}
                 {% endif %}
             </td>
-            <td>{{ bottle.avg_rating }}</td>
-            <td>{{ bottle.date_added.strftime("%b %-d, %Y") }}</td>
-            <td>{{ bottle.date_killed }}</td>
         </tr>
     </table>
     <div class="maindiv">
-        <form action="/editbottle/{{bottle.bottle_id}}" method="POST">
+        <form action="/editbottle/{{bottle.bottle_name}}" method="POST">
             <section>
 
-                <div style="float:left;margin-right:20px;">
+                <div>
                     <label for="bottle">Bottle</label>
-                    <input id="bottle" type="text" value="" name="bottle" size="30">
+                    <input id="bottle" type="text" value="" name="bottle" size="20" class="testinput">
                 </div>
 
-                <div style="float:left;margin-right:20px;">
+                <div>
                     <label for="type">Type</label>
-                    <input id="type" type="text" value="" name="type">
+                    <input id="type" type="text" value="" name="type" class="testinput">
                 </div>
 
-                <div style="float:left;">
+                <div>
                     <label for="proof">Proof</label>
-                    <input id="proof" type="text" value="" name="proof">
+                    <input id="proof" type="text" value="" name="proof" class="testinput">
                 </div>
 
-                <br style="clear:both;" />
-                <div style="float:left;">
-                    <label for="owner">Owner</label>
-                    <input id="owner" type="text" value="" name="owner">
-                </div>
                 <br style="clear:both;" />
                 <div style="margin-top:20px">
                     <input type="submit" value="Add Bottle">

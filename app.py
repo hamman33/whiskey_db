@@ -120,7 +120,7 @@ def rate(b_name):
         if(not exists(image_path[1:])):
             botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
             args = {}
-            args["keywords"] = botname
+            args["keywords"] = botname + " whiskey" 
             args["limit"] = 1
             args["format"] = "jpg"
             args["output_directory"] = "static"
@@ -130,7 +130,7 @@ def rate(b_name):
             try:
                 response = google_images_download.googleimagesdownload()
                 absolute_image_paths = response.download(args)
-                os.rename(absolute_image_paths[0][botname][0], "/home/mjhampo/Documents/repos/whiskey_db/static/images/" + botname + ".jpg")
+                os.rename(absolute_image_paths[0][args["keywords"]][0], "/home/mjhampo/Documents/repos/whiskey_db/static/images/" + botname + ".jpg")
             except:
                 print("cant find bottle image")
 
@@ -151,15 +151,14 @@ def deletebottle(id):
     except:
         return 'There was a problem deleting the bottle'
 
-@app.route('/editbottle/<string:id>', methods=['GET', 'POST'])
-def editbottle(id):
-    bottle = Collection.query.get_or_404(id)
+@app.route('/editbottle/<string:b_name>', methods=['GET', 'POST'])
+def editbottle(b_name):
+    bottle = Collection.query.get_or_404(b_name)
     print("here")
     if request.method == 'POST':
         bottle.bottle = request.form['bottle']
         bottle.whiskey_type = request.form['type']
         bottle.proof = request.form['proof']
-        bottle.owner = request.form['owner']
         try:
             db.session.commit()
             return redirect('/collection')
@@ -168,9 +167,9 @@ def editbottle(id):
     else:
         return render_template("editbottle.html", bottle=bottle)
 
-@app.route('/deleterating/<string:id>')
-def deleterating(id):
-    rating_obj = Ratings.query.get_or_404(id)
+@app.route('/deleterating/<string:b_name>')
+def deleterating(b_name):
+    rating_obj = Ratings.query.get_or_404(b_name)
 
     try:
         db.session.delete(rating_obj)

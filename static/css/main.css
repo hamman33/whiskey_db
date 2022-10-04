@@ -71,3 +71,7 @@ a:visited {
 .icon{
   height: 200px;
 }
+
+p{
+  margin: 0;
+}
