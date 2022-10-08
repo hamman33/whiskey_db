@@ -12,7 +12,7 @@ db = SQLAlchemy(app)
 
 class Ratings(db.Model):
     rating_num = db.Column(db.Integer, primary_key=True)
-    bottle_name = db.Column(db.String(200))
+    bottle_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     drinker = db.Column(db.String(50))
     date_drank = db.Column(db.DateTime, default=datetime.utcnow)
@@ -22,7 +22,8 @@ class Ratings(db.Model):
         return '<whiskey %r>' % self.whiskey
 
 class Collection(db.Model):
-    bottle_name = db.Column(db.String(200), primary_key=True)
+    bottle_id = db.Column(db.Integer, primary_key=True)
+    bottle_name = db.Column(db.String(200))
     whiskey_type = db.Column(db.String(50), default=0)
     proof = db.Column(db.Float, default=0)
     avg_rating = db.Column(db.Float, default=0)
@@ -40,10 +41,11 @@ def index():
 def collection():
     print(request.method)
     if request.method == 'POST':
+        bottle_id = max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))} or [0])+1
         bottle_name = request.form['bottle_name']
         w_type = request.form['type']
         proof = request.form['proof']
-        new_bottle = Collection(bottle_name=bottle_name, whiskey_type=w_type, proof=proof)
+        new_bottle = Collection(bottle_id=bottle_id, bottle_name=bottle_name, whiskey_type=w_type, proof=proof)
         try:
             db.session.add(new_bottle)
             db.session.commit()
@@ -51,9 +53,8 @@ def collection():
         except:
             return 'There was an issue adding to your collection'
     else:
-        ratings = Ratings.query.order_by(Ratings.date_drank).all()
         collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
-        return render_template('collection.html', ratings=ratings, collection=collection)
+        return render_template('collection.html', collection=collection)
 
 @app.route('/ratings', methods=['POST', 'GET'])
 def ratings():
@@ -62,9 +63,8 @@ def ratings():
         #do nothing
         pass
     else:
-        ratings = Ratings.query.order_by(Ratings.date_drank).all()
-        collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
-        return render_template('ratings.html', ratings=ratings, collection=collection)
+        ratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
+        return render_template('ratings.html', ratings=ratings)
 
 
 @app.route('/data')
@@ -78,9 +78,9 @@ def proof_round(p):
         return int(p)
     return p
 
-@app.route('/rate/<string:b_name>', methods=['GET', 'POST'])
-def rate(b_name):
-    bottle_obj = Collection.query.get_or_404(b_name)
+@app.route('/rate/<int:id>', methods=['GET', 'POST'])
+def rate(id):
+    bottle_obj = Collection.query.get_or_404(id)
     if request.method == 'POST':
         rating = request.form['rating']
         name = request.form['name']
@@ -99,7 +99,7 @@ def rate(b_name):
         if(float(rating) > 10 or float(rating) < 0):
             return 'Please enter a number from 0-10'
         
-        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_name=bottle_obj.bottle_name, rating=float(rating), drinker=name, blind=blind)
+        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
             db.session.commit()
@@ -107,9 +107,8 @@ def rate(b_name):
             return 'There was an issue adding the rating'
                 
         #update avg ratings
-        all_ratings = Ratings.query.filter_by(bottle_name=b_name).all()
+        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
         all_ratings_num = [rate.rating for rate in all_ratings]
-        print(all_ratings_num)
 
         bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
         db.session.commit()
@@ -120,7 +119,7 @@ def rate(b_name):
         if(not exists(image_path[1:])):
             botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
             args = {}
-            args["keywords"] = botname + " whiskey" 
+            args["keywords"] = botname + ", " + bottle_obj.whiskey_type
             args["limit"] = 1
             args["format"] = "jpg"
             args["output_directory"] = "static"
@@ -130,7 +129,8 @@ def rate(b_name):
             try:
                 response = google_images_download.googleimagesdownload()
                 absolute_image_paths = response.download(args)
-                os.rename(absolute_image_paths[0][args["keywords"]][0], "/home/mjhampo/Documents/repos/whiskey_db/static/images/" + botname + ".jpg")
+                print(absolute_image_paths[0][args["keywords"]][0])
+                os.rename(absolute_image_paths[0][args["keywords"]][0], "./static/images/" + botname + ".jpg")
             except:
                 print("cant find bottle image")
 

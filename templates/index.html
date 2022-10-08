@@ -21,7 +21,7 @@
                 {% for bot in collection %}
                 <tr>
                     <td>
-                        <a href="/rate/{{bot.bottle_name}}">{{ bot.bottle_name }}</a>
+                        <a href="/rate/{{bot.bottle_id}}">{{ bot.bottle_name }}</a>
                     </td>
                     <td>{{ bot.whiskey_type }}</td>
                     <td> {% if bot.proof.is_integer() %}
