@@ -119,17 +119,16 @@ def rate(id):
         if(not exists(image_path[1:])):
             botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
             args = {}
-            args["keywords"] = botname + ", " + bottle_obj.whiskey_type
+            args["keywords"] = botname + " " + bottle_obj.whiskey_type
             args["limit"] = 1
             args["format"] = "jpg"
             args["output_directory"] = "static"
             args["image_directory"] = "images"
-            args["prefix"] = botname
+            args["aspect_ratio"] = "tall"
 
             try:
                 response = google_images_download.googleimagesdownload()
                 absolute_image_paths = response.download(args)
-                print(absolute_image_paths[0][args["keywords"]][0])
                 os.rename(absolute_image_paths[0][args["keywords"]][0], "./static/images/" + botname + ".jpg")
             except:
                 print("cant find bottle image")
