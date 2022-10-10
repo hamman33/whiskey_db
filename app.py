@@ -63,7 +63,7 @@ def ratings():
         #do nothing
         pass
     else:
-        ratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
+        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
         return render_template('ratings.html', ratings=ratings)
 
 
@@ -99,7 +99,8 @@ def rate(id):
         if(float(rating) > 10 or float(rating) < 0):
             return 'Please enter a number from 0-10'
         
-        new_rating = Ratings(rating_num=max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
+        rate_num_new = max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1
+        new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
             db.session.commit()
@@ -119,12 +120,13 @@ def rate(id):
         if(not exists(image_path[1:])):
             botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
             args = {}
-            args["keywords"] = botname + " " + bottle_obj.whiskey_type
+            args["keywords"] = botname + " " + bottle_obj.whiskey_type + " whiskey"
             args["limit"] = 1
             args["format"] = "jpg"
             args["output_directory"] = "static"
             args["image_directory"] = "images"
             args["aspect_ratio"] = "tall"
+            args["time"] = "past-year"
 
             try:
                 response = google_images_download.googleimagesdownload()
@@ -136,7 +138,7 @@ def rate(id):
         
         return render_template('rate.html', bottle=bottle_obj, image=image_path)
 
-@app.route('/deletebottle/<string:id>')
+@app.route('/deletebottle/<int:id>')
 def deletebottle(id):
     bottle_obj = Collection.query.get_or_404(id)
     ratings = Ratings.query.filter_by(bottle_id=id)
@@ -150,12 +152,11 @@ def deletebottle(id):
     except:
         return 'There was a problem deleting the bottle'
 
-@app.route('/editbottle/<string:b_name>', methods=['GET', 'POST'])
-def editbottle(b_name):
-    bottle = Collection.query.get_or_404(b_name)
-    print("here")
+@app.route('/editbottle/<int:id>', methods=['GET', 'POST'])
+def editbottle(id):
+    bottle = Collection.query.get_or_404(id)
     if request.method == 'POST':
-        bottle.bottle = request.form['bottle']
+        bottle.bottle_name = request.form['bottle']
         bottle.whiskey_type = request.form['type']
         bottle.proof = request.form['proof']
         try:
@@ -166,9 +167,10 @@ def editbottle(b_name):
     else:
         return render_template("editbottle.html", bottle=bottle)
 
-@app.route('/deleterating/<string:b_name>')
-def deleterating(b_name):
-    rating_obj = Ratings.query.get_or_404(b_name)
+@app.route('/deleterating/<int:id>')
+def deleterating(id):
+    print(id)
+    rating_obj = Ratings.query.get_or_404(id)
 
     try:
         db.session.delete(rating_obj)

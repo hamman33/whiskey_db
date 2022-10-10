@@ -23,7 +23,7 @@
             {% for rate in ratings %}
             <tr>
                 <td>{{ rate.bottle_name }}</td>
-                <td>{{ rate.drinker }}</td>
+                <td>{{ rate.rating_num }}</td>
                 <td>{{ rate.rating }}</td>
                 {% if rate.blind %}
                 <td>X</td>
@@ -32,9 +32,7 @@
                 {% endif %}
                 <td>{{ rate.date_drank.strftime("%b %-d, %Y") }}</td>
                 <td>
-                    <a href="/editrating/{{rate.rating_num}}">Edit</a>
-                    <a> | </a>
-                    <a href="/deleterating/{{rate.rating_num}}">Remove</a>
+                    <a href="/deleterating/{{rate.rating_num}}">Delete</a>
                 </td>
             </tr>
             {% endfor %}
