@@ -1,0 +1,363 @@
+ * Serving Flask app 'app'
+ * Debug mode: off
+None
+[6.3, 6.7]
+GET
+GET
+
+Item no.: 1 --> Item name = michter's_sour_mash whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> michter's_sour_mash 1.michter_s-us1-sour-mash-whiskey-1.jpg
+
+Errors: 0
+
+GET
+
+Item no.: 1 --> Item name = rabbit_hole_rye_batch_03 whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+
+Item no.: 1 --> Item name = wild_turkey_101 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> wild_turkey_101 1.04186.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = angel's_envy_barrel_pick whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> angel's_envy_barrel_pick 1.ae-private-select-broudys-site-compressed.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = barrell_seagrass whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> barrell_seagrass 1.barrell-seagrass-525x586.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = woodford_reserve_double_oaked whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> woodford_reserve_double_oaked 1.woodford-reserve-double-oak-2.jpg
+
+Errors: 0
+
+None
+None
+None
+[6.3, 6.5, 6.9, 6.4]
+None
+[6.3, 6.5, 6.9, 6.4, 6.4]
+None
+[6.3, 6.5, 6.9, 6.4, 6.4, 6.4]
+None
+[6.3, 6.5, 6.9, 6.4, 6.4, 6.4, 6.8]
+
+Item no.: 1 --> Item name = barrell_rye_batch_001 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> barrell_rye_batch_001 1.barrellryebatch1.jpg
+
+Errors: 0
+
+None
+[6.4, 7.5, 8.7, 6.7]
+None
+[6.4, 7.5, 8.7, 6.7, 7.5]
+
+Item no.: 1 --> Item name = bardstown_discovery_series_8 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> bardstown_discovery_series_8 1.bbco-discovery8.jpeg
+
+Errors: 0
+
+None
+None
+[8.2, 8.4, 9.3, 6.7, 9.1]
+None
+[8.2, 8.4, 9.3, 6.7, 9.1, 9.1]
+None
+[8.2, 8.4, 9.3, 6.7, 9.1, 9.1, 9.1]
+None
+[8.2, 8.4, 9.3, 6.7, 9.1, 9.1, 9.1, 9.4]
+
+Item no.: 1 --> Item name = bardstown_founders whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> bardstown_founders 1.b6e2fff6-1472-448d-aca4-2d81454a839b_1_201_a_2048x.jpg
+
+Errors: 0
+
+None
+[8.7, 9.1, 7.2, 8]
+None
+[8.7, 9.1, 7.2, 8, 8.7]
+
+Item no.: 1 --> Item name = ecbp whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> ecbp 1.kadyl30c3vm11.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = elijah_craig_barrel_proof_a122 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> elijah_craig_barrel_proof_a122 1.elijah-craig-barrel-proof-a122.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = four_roses_small_batch whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> four_roses_small_batch 1.18frb1407_new_smallbatchselect_cola_frontfin.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = iron_fish_four_cask whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> iron_fish_four_cask 1.squared_barnbackground_bottles_4cask.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = russel's_reserve_10yr whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> russel's_reserve_10yr 1.russell_960x.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = octomore_12.1 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> octomore_12.1 1.octomore-12.1-review-750x563.jpg
+
+Errors: 0
+
+GET
+GET
+
+Item no.: 1 --> Item name = baker's_000027860 whiskey
+Evaluating...
+Starting Download...
+
+Errors: 0
+
+cant find bottle image
+
+Item no.: 1 --> Item name = booker's_ronnie's_batch_2022-01 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> booker's_ronnie's_batch_2022-01 1.p_179070.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = bulleit_10 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> bulleit_10 1.ci-bulleit-bourbon-10-year-e8cb00f4037a100a.jpeg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = eagle_rare whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> eagle_rare 1.ci-eagle-rare-10-year-ce77b32cc0eeb038.png.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = elijah_craig_small_batch whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> elijah_craig_small_batch 1.image.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = pinhook_2021_bourbon_heist whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> pinhook_2021_bourbon_heist 1.pinhook-bourbon-heist-kentucky-straight-bourbon-whiskey__00648.1650536510.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = pinhook_2022_bourbondini whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> pinhook_2022_bourbondini 1.pinhook-bourbondini-kentucky-straight-bourbon-whiskey__73011.1662413231.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = rabbit_hole_cavehill whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> rabbit_hole_cavehill 1.cavehill_white_straight_reflection_960x.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = smoke_wagon_ucuf whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> smoke_wagon_ucuf 1.smoke-wagon-uncut-unfiltered-bourbon-whiskey-750ml-the-barrel-tap_1024x1024.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = tx_bourbon whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> tx_bourbon 1.085837900302.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = weller_antique_107 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> weller_antique_107 1.ci-old-weller-antique-107-brand-6b180ec1186d805a.jpeg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = ammunition whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> ammunition 1.ammunitionbundle_960x.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = barrell_armida whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> barrell_armida 1.barrell-armida-bourbon-whiskey.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = early_times_bib whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> early_times_bib 1.5e9f1b6264e8614fb9a98505_early-times-bottled-in-bond-01a.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = heaven_hill_bib whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> heaven_hill_bib 1.5db1b305adcfe22050156b7d_heaven-hill-7-year-bottled-in-bond-01a.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = four_roses_small_batch_select whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> four_roses_small_batch_select 1.four-roses-small-batch-select-bourbon.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = j._henry_&_sons_anniversary_2021_le whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> j._henry_&_sons_anniversary_2021_le 1.ci-j-henry-5-year-bourbon-f091c92f0707e551.jpeg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = jack_daniels_single_barrel_select whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> jack_daniels_single_barrel_select 1.jd-single-barrel-select_960x.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = larceny whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> larceny 1.larceny1__74525.1643995491.jpg
+
+Errors: 0
+
+GET
+here
+here
+GET
+
+Item no.: 1 --> Item name = maker's_46 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> maker's_46 1.makers-mark-46-whisky-bottle-on-red-background-1200x1600.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = michter's_small_batch whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> michter's_small_batch 1.michter_s-us1-unblended-small-batch-american-whiskey-1_1.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = new_riff whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> new_riff 1.bottle-line-up-2020.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = nulu_double_oaked whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> nulu_double_oaked 1.nulu-double-oaked-straight-bourbon-tps-private-barrel-500x500.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = old_forester_1920 whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> old_forester_1920 1.a67bd826-f515-4ec6-90d9-e00cb1ccf0e0_1_102_a.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = pinhook_vertical_series_bourbon_war_7yr whiskey
+Evaluating...
+Starting Download...
+Completed Image ====> pinhook_vertical_series_bourbon_war_7yr 1.img_8838_550x.jpg
+
+Errors: 0
+
+
+Item no.: 1 --> Item name = rabbit_hole_cavehill_sib_kbf whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
