@@ -130,7 +130,7 @@ def rate(b_name):
             try:
                 response = google_images_download.googleimagesdownload()
                 absolute_image_paths = response.download(args)
-                os.rename(absolute_image_paths[0][args["keywords"]][0], "/home/mjhampo/Documents/repos/whiskey_db/static/images/" + botname + ".jpg")
+                os.rename(absolute_image_paths[0][args["keywords"]][0], "./static/images/" + botname + ".jpg")
             except:
                 print("cant find bottle image")
 
@@ -180,7 +180,7 @@ def deleterating(b_name):
  
 
 def main():
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=False, host="0.0.0.0")
     db.create_all()
 
 if __name__ == "__main__":

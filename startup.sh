@@ -1,4 +1,5 @@
 #!/usr/bin/bash
 
-source env/bin/activate 
-python app.py 
+pkill -9 python
+source venv/bin/activate 
+python app.py > log.txt &
