@@ -103,7 +103,6 @@ def rate(id):
         new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
-            db.session.commit()
         except:
             return 'There was an issue adding the rating'
                 

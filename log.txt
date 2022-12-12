@@ -1,0 +1,24 @@
+/home/pi/whiskey_db/venv/lib/python3.9/site-packages/flask_sqlalchemy/__init__.py:872: FSADeprecationWarning: SQLALCHEMY_TRACK_MODIFICATIONS adds significant overhead and will be disabled by default in the future.  Set it to True or False to suppress this warning.
+  warnings.warn(FSADeprecationWarning(
+ * Serving Flask app 'app'
+ * Debug mode: off
+[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.10.1.26:5000
+[33mPress CTRL+C to quit[0m
+98.29.137.129 - - [11/Dec/2022 20:29:51] "GET /ratings HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:29:51] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:29:54] "GET / HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:29:54] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:29:56] "GET /rate/116 HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:29:56] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:29:56] "[36mGET /static/images/michter's_american_.jpg HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:30:13] "[32mPOST /rate/116 HTTP/1.1[0m" 302 -
+98.29.137.129 - - [11/Dec/2022 20:30:14] "GET / HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:30:14] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:30:17] "GET /ratings HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:30:17] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+98.29.137.129 - - [11/Dec/2022 20:30:18] "[32mGET /deleterating/376 HTTP/1.1[0m" 302 -
+98.29.137.129 - - [11/Dec/2022 20:30:19] "GET /ratings HTTP/1.1" 200 -
+98.29.137.129 - - [11/Dec/2022 20:30:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
