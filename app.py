@@ -5,6 +5,7 @@ from datetime import datetime
 from os.path import exists
 from google_images_download import google_images_download
 import os
+import time
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
@@ -18,8 +19,6 @@ class Ratings(db.Model):
     date_drank = db.Column(db.DateTime, default=datetime.utcnow)
     blind = db.Column(db.Boolean, default=False)
 
-    def __repr__(self):
-        return '<whiskey %r>' % self.whiskey
 
 class Collection(db.Model):
     bottle_id = db.Column(db.Integer, primary_key=True)
@@ -34,6 +33,8 @@ class Collection(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
+    #print(Ratings.query.all().rating_num)
+    
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection)
 
@@ -98,18 +99,15 @@ def rate(id):
 
         if(float(rating) > 10 or float(rating) < 0):
             return 'Please enter a number from 0-10'
-        
-        rate_num_new = max({Ratings.query.all()[i].rating_num for i in range(len(Ratings.query.all()))} or [0])+1
+        rate_num_new = max(r.rating_num for r in db.session.query(Ratings.rating_num))+1
         new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
         except:
-            return 'There was an issue adding the rating'
-                
+            return 'There was an issue adding the rating'      
         #update avg ratings
         all_ratings = Ratings.query.filter_by(bottle_id=id).all()
         all_ratings_num = [rate.rating for rate in all_ratings]
-
         bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
         db.session.commit()
 
