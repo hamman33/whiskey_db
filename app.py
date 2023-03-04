@@ -34,9 +34,19 @@ class Collection(db.Model):
 @app.route('/', methods=['POST', 'GET'])
 def index():
     #print(Ratings.query.all().rating_num)
-    
+    calcRatings()
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection)
+
+
+def calcRatings():
+    for i in range(len(Collection.query.all())):
+        id = Collection.query.all()[i].bottle_id    
+        bottle_obj = Collection.query.get_or_404(id)
+        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+        bottle_obj.num_ratings = len(all_ratings)
+    db.session.commit()
+    return
 
 @app.route('/collection', methods=['POST', 'GET'])
 def collection():
