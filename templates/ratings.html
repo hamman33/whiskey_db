@@ -30,7 +30,7 @@
                 {% else %}
                 <td></td>
                 {% endif %}
-                <td>{{ rate.date_drank.strftime("%b %-d, %Y %-10z") }}</td>
+                <td>{{ rate.date_drank.strftime("%b %-d, %Y %HH %5z") }}</td>
                 <td>
                     <a href="/deleterating/{{rate.rating_num}}">Delete</a>
                 </td>

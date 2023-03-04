@@ -36,5 +36,34 @@
         <p>8-8.9: Great to Spectacular</p>
         <p>9-9.9: Some of the best I've ever had</p>
     </div>
+    <h1 style="text-align: center">Ratings</h1>
+    {% if ratings|length < 1 %} <h4 style="text-align: center">There are no ratings.</h4>
+        {% else %}
+        <table>
+            <tr>
+                <th>Drinker</th>
+                <th>Rating</th>
+                <th>Blind</th>
+                <th>Date</th>
+                <th>Edit</th>
+
+            </tr>
+            {% for rate in ratings %}
+            <tr>
+                <td>{{ rate.drinker }}</td>
+                <td>{{ rate.rating }}</td>
+                {% if rate.blind %}
+                <td>X</td>
+                {% else %}
+                <td></td>
+                {% endif %}
+                <td>{{ rate.date_drank.strftime("%b %-d, %Y") }}</td>
+                <td>
+                    <a href="/deleterating/{{rate.rating_num}}">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% endif %}
 </div>
 {% endblock %}

@@ -5,7 +5,7 @@ from datetime import datetime
 from os.path import exists
 from google_images_download import google_images_download
 import os
-import time
+import pytz
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
@@ -26,7 +26,7 @@ class Collection(db.Model):
     whiskey_type = db.Column(db.String(50), default=0)
     proof = db.Column(db.Float, default=0)
     avg_rating = db.Column(db.Float, default=0)
-    price = db.Column(db.Float, default=0)
+    num_ratings = db.Column(db.Integer, default=0)
 
     def __repr__(self):
         return '<bottle %r>' % self.bottle
@@ -82,6 +82,9 @@ def proof_round(p):
 @app.route('/rate/<int:id>', methods=['GET', 'POST'])
 def rate(id):
     bottle_obj = Collection.query.get_or_404(id)
+    all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+    all_ratings_num = [rate.rating for rate in all_ratings]
+
     if request.method == 'POST':
         rating = request.form['rating']
         name = request.form['name']
@@ -107,9 +110,9 @@ def rate(id):
         except:
             return 'There was an issue adding the rating'      
         #update avg ratings
-        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
-        all_ratings_num = [rate.rating for rate in all_ratings]
+        
         bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
+        bottle_obj.num_ratings = len(all_ratings_num)
         db.session.commit()
 
         return redirect('/')
@@ -133,8 +136,7 @@ def rate(id):
             except:
                 print("cant find bottle image")
 
-        
-        return render_template('rate.html', bottle=bottle_obj, image=image_path)
+        return render_template('rate.html', bottle=bottle_obj, image=image_path, ratings=all_ratings)
 
 @app.route('/deletebottle/<int:id>')
 def deletebottle(id):

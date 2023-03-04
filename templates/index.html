@@ -16,6 +16,7 @@
                     <th>Type</th>
                     <th>Proof</th>
                     <th>Average Rating</th>
+                    <th># Ratings</th>
 
                 </tr>
                 {% for bot in collection %}
@@ -31,6 +32,7 @@
                         {% endif %}
                     </td>
                     <td>{{ '%.1f' % bot.avg_rating }}</td>
+                    <td>{{ bot.num_ratings }}</td>
                 </tr>
                 {% endfor %}
         </table>
