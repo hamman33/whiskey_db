@@ -15,7 +15,7 @@ class Ratings(db.Model):
     bottle_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     drinker = db.Column(db.String(50))
-    date_drank = db.Column(db.DateTime, default=datetime.utcnow())
+    date_drank = db.Column(db.DateTime, default=datetime.now())
     blind = db.Column(db.Boolean, default=False)
 
 
@@ -81,8 +81,6 @@ def proof_round(p):
 @app.route('/rate/<int:id>', methods=['GET', 'POST'])
 def rate(id):
     bottle_obj = Collection.query.get_or_404(id)
-    all_ratings = Ratings.query.filter_by(bottle_id=id).all()
-    all_ratings_num = [rate.rating for rate in all_ratings]
 
     if request.method == 'POST':
         rating = request.form['rating']
@@ -105,10 +103,14 @@ def rate(id):
         new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
         try:
             db.session.add(new_rating)
-            #db.session.commit()
+            db.session.commit()
         except:
             return 'There was an issue adding the rating'      
         #update avg ratings
+
+
+        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+        all_ratings_num = [rate.rating for rate in all_ratings]
         
         bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
         bottle_obj.num_ratings = len(all_ratings_num)
@@ -134,7 +136,8 @@ def rate(id):
                 os.rename(absolute_image_paths[0][args["keywords"]][0], "./static/images/" + botname + ".jpg")
             except:
                 print("cant find bottle image")
-
+                
+        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
         return render_template('rate.html', bottle=bottle_obj, image=image_path, ratings=all_ratings)
 
 @app.route('/deletebottle/<int:id>')
@@ -174,10 +177,12 @@ def deleterating(id):
     try:
         db.session.delete(rating_obj)
         db.session.commit()
-        return redirect('/ratings')
     except:
         return 'There was a problem deleting the rating'
- 
+    
+    #bot_id = rating_obj.
+
+    return redirect('/ratings')
 
 def main():
     app.run(debug=False, host="0.0.0.0")
