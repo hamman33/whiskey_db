@@ -180,9 +180,20 @@ def deleterating(id):
     except:
         return 'There was a problem deleting the rating'
     
-    #bot_id = rating_obj.
+    bottle_obj = Collection.query.get_or_404(rating_obj.bottle_id)
 
-    return redirect('/ratings')
+    all_ratings = Ratings.query.filter_by(bottle_id=rating_obj.bottle_id).all()
+    all_ratings_num = [rate.rating for rate in all_ratings]
+
+    if (len(all_ratings_num)==0):
+        bottle_obj.avg_rating = 0
+    else:    
+        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
+    bottle_obj.num_ratings = len(all_ratings_num)
+    db.session.commit()
+
+
+    return redirect('/rate/'+str(rating_obj.bottle_id))
 
 def main():
     app.run(debug=False, host="0.0.0.0")
