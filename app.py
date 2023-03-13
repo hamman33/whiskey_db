@@ -32,9 +32,11 @@ class Collection(db.Model):
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
-    #print(Ratings.query.all().rating_num)
+    tBotNum = db.session.query(Collection).count()
+    tRatNum = db.session.query(Ratings).count()
+    newRating = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).first()
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
-    return render_template('index.html', collection=collection)
+    return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRating=newRating)
 
 
 @app.route('/collection', methods=['POST', 'GET'])

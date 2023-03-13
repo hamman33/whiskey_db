@@ -7,10 +7,18 @@
 {% block body %}
 <div class="maindiv">
     <h1 style="text-align: center">The Boys Whiskey Collection</h1>
+    <p>
+        <h2>Collection Statistics</h2>
+        <p>Total Number of Bottles: {{ tBotNum }}</p>
+        <p>Total Number of Ratings: {{ tRatNum }}</p>
+        <p>Newest Rating: {{ newRating.bottle_name }} | {{ newRating.drinker }} | {{ newRating.rating }} </p>
+    </p>
+    <br></br>
+    <input type="text" id="mainSeachBar" onkeyup="searchCollection()" placeholder="Search for bottles.." title="Type in a bottle name">
     {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
         {% else %}
         <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-        <table class="sortable">
+        <table class="sortable" id="collectionTable">
                 <tr>
                     <th>Bottle</th>
                     <th>Type</th>
@@ -38,5 +46,26 @@
         </table>
         {% endif %}
 </div>
+
+<script>
+    function searchCollection() {
+      var input, filter, table, tr, td, i, txtValue;
+      input = document.getElementById("mainSeachBar");
+      filter = input.value.toUpperCase();
+      table = document.getElementById("collectionTable");
+      tr = table.getElementsByTagName("tr");
+      for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[0];
+        if (td) {
+          txtValue = td.textContent || td.innerText;
+          if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            tr[i].style.display = "";
+          } else {
+            tr[i].style.display = "none";
+          }
+        }       
+      }
+    }
+    </script>
 
 {% endblock %}
