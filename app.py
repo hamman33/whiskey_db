@@ -15,7 +15,7 @@ class Ratings(db.Model):
     bottle_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Integer, nullable=False)
     drinker = db.Column(db.String(50))
-    date_drank = db.Column(db.DateTime, default=datetime.now())
+    date_drank = db.Column(db.DateTime, default=datetime.now)
     blind = db.Column(db.Boolean, default=False)
 
 
