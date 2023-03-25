@@ -5,6 +5,7 @@ from datetime import datetime
 from os.path import exists
 from google_images_download import google_images_download
 import os
+import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
@@ -17,6 +18,8 @@ class Ratings(db.Model):
     drinker = db.Column(db.String(50))
     date_drank = db.Column(db.DateTime, default=datetime.now)
     blind = db.Column(db.Boolean, default=False)
+    def __repr__(self):
+        return '<rating %r>' % self.rating
 
 
 class Collection(db.Model):
@@ -69,17 +72,20 @@ def ratings():
         return render_template('ratings.html', ratings=ratings)
 
 
-@app.route('/data')
-def data():
-    bot_dct = {i: Collection.query.all()[i].bottle for i in range(len(Collection.query.all()))}
+@app.route('/recentratings')
+def recentratings():
+    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
+    rating_string = ""
+    for rat in newRatings:
+        rating_string = rating_string + rat.bottle_name + "|" + rat.drinker +  "|" + str(rat.rating) + ";"
     
-    return bot_dct
+    return rating_string
 
 def proof_round(p):
     if p.is_integer():
         return int(p)
     return p
-
+ 
 @app.route('/rate/<int:id>', methods=['GET', 'POST'])
 def rate(id):
     bottle_obj = Collection.query.get_or_404(id)
