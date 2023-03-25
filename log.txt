@@ -8,8 +8,1362 @@
  * Running on all addresses (0.0.0.0)
    WARNING: This is a development server. Do not use it in a production deployment.
  * Running on http://127.0.0.1:5000
- * Running on http://10.10.1.18:5000 (Press CTRL+C to quit)
-10.10.1.23 - - [16/Mar/2023 19:20:39] "GET /recentratings HTTP/0.9" 200 -
-127.0.0.1 - - [16/Mar/2023 19:20:46] "GET /recentratings HTTP/1.1" 200 -
-10.10.1.23 - - [16/Mar/2023 21:36:15] "GET /recentratings HTTP/0.9" 200 -
-10.10.1.23 - - [16/Mar/2023 21:36:42] "GET /recentratings HTTP/0.9" 200 -
+ * Running on http://10.10.1.26:5000
+[33mPress CTRL+C to quit[0m
+10.10.1.18 - - [13/Mar/2023 15:42:13] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:14] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:14] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:14] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:22] "GET /rate/20 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:23] "GET /static/images/angel's_envy_barrel_pick.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:32] "[32mPOST /rate/20 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 15:42:32] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:40] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:43] "[32mGET /deleterating/571 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 15:42:43] "GET /rate/20 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:42:45] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:43:45] "GET /rate/12 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:43:45] "GET /static/images/orphan_barrel_fable_and_folly.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:43:50] "[32mPOST /rate/12 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 15:43:50] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:43:56] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:43:59] "[32mGET /deleterating/571 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 15:43:59] "GET /rate/12 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:44:01] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:45:22] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:45:22] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:45:22] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:45:22] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:45:23] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 15:46:07] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:19] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:26] "GET /editbottle/116 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:29] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:32] "GET /rate/116 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:46:32] "GET /static/images/michter's_american_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:47:16] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 15:47:20] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:47:20] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 15:47:20] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 15:47:20] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:48:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:48:30] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:48:30] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 15:48:30] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:48:31] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 15:48:31] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 15:48:31] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 15:48:31] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 15:52:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 15:53:48] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 18:04:36] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 18:19:19] "GET /rate/142 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 18:19:19] "[33mGET /static/images/bardstown_origin_series.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 18:19:35] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:39:46] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:39:46] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:39:47] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:39:47] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:39:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 20:41:27] "GET /rate/49 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:41:27] "GET /static/images/canadian_club.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:41:54] "GET /rate/36 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:41:54] "GET /static/images/bardstown_discovery_series_8.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:41:59] "GET /rate/36 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:01] "GET /rate/98 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:01] "GET /static/images/bardstown_chateau_de_laubade.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:05] "GET /rate/35 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:05] "GET /static/images/bardstown_discovery_series_7.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:06] "GET /rate/74 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:42:06] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 20:42:07] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 20:42:07] "GET /static/images/j._henry_&_sons_anniversary_2021_le.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:43:26] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 20:43:26] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:43:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:43:29] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 20:43:37] "GET /rate/83 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:43:37] "GET /static/images/weller_special_reserve_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 20:43:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:35] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:35] "GET /static/images/old_grand_dad_114.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:39] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:50] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:50] "GET /static/images/old_grand_dad_114.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:57] "[32mPOST /rate/44 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:04:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:04:57] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:05:06] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:05:23] "[32mPOST /rate/44 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:05:23] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:07:01] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:14:30] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:16:46] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:16:46] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:16:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:17:06] "GET /rate/93 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:17:06] "GET /static/images/1792_full_proof.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:18:41] "GET /rate/31 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:18:41] "GET /static/images/ammunition.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:21:07] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:21:08] "[36mGET /static/images/old_grand_dad_114.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:21:19] "[32mPOST /rate/44 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:21:19] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:21:21] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:21:21] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:21:21] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:21:21] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:21:35] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:21:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:06] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:07] "[36mGET /static/images/old_grand_dad_114.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:22:15] "[32mPOST /rate/44 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:22:15] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:22] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:52] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:57] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:58] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:22:58] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:23:27] "GET /rate/157 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:23:27] "[33mGET /static/images/jameson_caskmates_stout_edition.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 21:23:33] "[32mPOST /rate/157 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:23:33] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:24:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:24:42] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:25:03] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:25:04] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:37:13] "GET /rate/12 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:37:14] "[36mGET /static/images/orphan_barrel_fable_and_folly.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 21:39:13] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:39:25] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:39:34] "GET /rate/158 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:39:34] "[33mGET /static/images/paniolo.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 21:39:41] "[32mPOST /rate/158 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:39:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:40:27] "GET /rate/158 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:40:27] "[33mGET /static/images/paniolo.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 21:40:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:40:48] "GET /rate/158 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:41:10] "[32mPOST /rate/158 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:41:10] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:41:18] "[32mPOST /rate/158 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 21:41:18] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:41:20] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:41:26] "GET /rate/158 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:43:44] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:43:47] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:47:24] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 21:47:27] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:02:27] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:02:27] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 22:02:28] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 22:02:28] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [13/Mar/2023 22:02:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:03:54] "GET /rate/158 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:03:54] "[33mGET /static/images/paniolo.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:04:48] "[32mPOST /rate/158 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:04:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:13:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:13:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:13:45] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:14:50] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:14:51] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:14:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:21:10] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:21:14] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:21:19] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:26:40] "GET /rate/159 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:26:41] "[33mGET /static/images/ezra_brooks_cask_strength_baxter's_liquor_&_wine.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:28:43] "[32mPOST /rate/159 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:28:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:28:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:28:49] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:28:53] "GET /rate/159 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:28:54] "GET /rate/159 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:28:55] "[33mGET /static/images/ezra_brooks_cask_strength_baxter's_liquor_&_wine.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:29:03] "[32mPOST /rate/159 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:29:03] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:42:39] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:42:56] "GET /rate/159 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:42:56] "[33mGET /static/images/ezra_brooks_cask_strength_baxter's_liquor_&_wine.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:43:09] "[32mPOST /rate/159 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:43:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:43:25] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:43:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:47:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:47:23] "GET /rate/159 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:47:23] "[33mGET /static/images/ezra_brooks_cask_strength_baxter's_liquor_&_wine.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:47:28] "[32mPOST /rate/159 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 22:47:28] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:54:18] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:54:27] "GET /rate/156 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:54:27] "[33mGET /static/images/colonel_eh_taylor_small_batch.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:54:32] "GET /rate/156 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:54:32] "[33mGET /static/images/colonel_eh_taylor_small_batch.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [13/Mar/2023 22:58:00] "GET /rate/85 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:58:00] "GET /static/images/penelope_architect_build_3.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:58:27] "GET /rate/84 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 22:58:27] "GET /static/images/elijah_craig_toasted_barrel_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:05:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:05:59] "GET /rate/56 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:05:59] "GET /static/images/blue_run_reflection_i.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:06:35] "[32mPOST /rate/56 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 23:06:36] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:06:46] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:13:45] "GET /rate/18 HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:13:46] "GET /static/images/blue_run_high_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [13/Mar/2023 23:14:48] "[32mPOST /rate/18 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [13/Mar/2023 23:14:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:21] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:21] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:21] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:21] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [14/Mar/2023 15:07:39] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:42] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:42] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:43] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:07:43] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:03] "GET /rate/18 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:04] "GET /static/images/blue_run_high_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:22] "[32mGET /deleterating/585 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 15:08:22] "GET /rate/18 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:25] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:31] "GET /rate/56 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:31] "GET /static/images/blue_run_reflection_i.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:33] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:36] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:08:41] "[32mPOST /rate/56 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 15:08:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:09:16] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:09:35] "GET /rate/18 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:09:35] "GET /static/images/blue_run_high_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:09:55] "GET /rate/56 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:09:56] "GET /static/images/blue_run_reflection_i.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 15:10:22] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:11:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:12:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:12:37] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:12:38] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:12:38] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:13:46] "GET /rate/81 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:13:47] "GET /static/images/michter's_sour_mash.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:15:52] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:17:14] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:48:54] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:49:01] "GET /rate/81 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:49:02] "GET /static/images/michter's_sour_mash.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:49:06] "GET /rate/81 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:49:07] "[32mPOST /rate/81 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 17:49:07] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:49:16] "[32mPOST /rate/81 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 17:49:16] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:59:44] "GET /rate/114 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 17:59:44] "GET /static/images/maker's_mark_brt-01.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:07:55] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:07:55] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:07:56] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:07:56] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:15] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:18] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:24] "GET /rate/151 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:08:24] "[33mGET /static/images/four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [14/Mar/2023 18:19:33] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:35:06] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:35:37] "GET /rate/114 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:35:37] "GET /static/images/maker's_mark_brt-01.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:36:37] "[32mPOST /rate/114 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 18:36:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:54:42] "GET /rate/114 HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:54:42] "GET /static/images/maker's_mark_brt-01.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 18:54:57] "[32mPOST /rate/114 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [14/Mar/2023 18:54:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 21:18:07] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [14/Mar/2023 21:18:07] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [14/Mar/2023 21:18:08] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [14/Mar/2023 21:18:08] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [14/Mar/2023 21:18:13] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 07:27:20] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 07:27:21] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 07:27:21] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 07:27:21] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 09:18:10] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 09:19:08] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 09:19:10] "GET /rate/81 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 09:19:10] "GET /static/images/michter's_sour_mash.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 13:48:25] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 13:48:25] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 13:48:25] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 13:48:25] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [15/Mar/2023 20:51:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 20:51:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [15/Mar/2023 20:51:12] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [15/Mar/2023 20:51:12] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [15/Mar/2023 20:51:25] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 20:57:34] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 20:57:41] "GET /rate/26 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 20:57:42] "GET /static/images/redbreast_cask_strength.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:27:16] "GET /rate/26 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:27:42] "[32mPOST /rate/26 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [15/Mar/2023 21:27:42] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:33:00] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:33:03] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:33:40] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [15/Mar/2023 21:33:41] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:33:44] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:53:58] "GET /rate/160 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:53:59] "[33mGET /static/images/drexel_irbon.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [15/Mar/2023 21:54:11] "[32mPOST /rate/160 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [15/Mar/2023 21:54:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:54:25] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:54:26] "[32mGET /deleterating/591 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [15/Mar/2023 21:54:28] "GET /rate/160 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:54:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:54:34] "GET /rate/160 HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 21:54:42] "[32mPOST /rate/160 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [15/Mar/2023 21:54:42] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [15/Mar/2023 23:24:35] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 07:07:50] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 07:07:50] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 07:07:50] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 07:07:53] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:41:37] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 18:41:48] "GET /rate/86 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:41:48] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:41:48] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:41:48] "[33mGET /static/images/rabbit_hole_cavehill_sib_bourbon_&_beyond.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 18:42:02] "[32mPOST /rate/86 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 18:42:02] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:42:02] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:51:21] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:51:21] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 18:51:22] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 18:51:22] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 18:51:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 19:23:59] "GET /rate/138 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 19:23:59] "[33mGET /static/images/bardstown_discovery_series_6.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 19:24:25] "[32mPOST /rate/138 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 19:24:25] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 19:24:34] "GET /rate/138 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:28] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:28] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:28] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:28] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:52] "GET /rate/138 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:04:52] "[33mGET /static/images/bardstown_discovery_series_6.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 20:05:51] "[32mPOST /rate/138 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 20:05:52] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:19:09] "GET /rate/84 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:19:10] "GET /static/images/elijah_craig_toasted_barrel_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:20:30] "[32mPOST /rate/84 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 20:20:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:03] "GET /rate/85 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:04] "GET /static/images/penelope_architect_build_3.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:24] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:38] "GET /rate/84 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:38] "GET /static/images/elijah_craig_toasted_barrel_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:21:55] "[32mPOST /rate/84 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 20:21:55] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:22:04] "GET /rate/85 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:22:04] "GET /static/images/penelope_architect_build_3.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:22:22] "[32mPOST /rate/85 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 20:22:23] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 20:23:28] "[32mPOST /rate/85 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 20:23:28] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:03:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:03:19] "GET /rate/85 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:23:25] "GET /rate/116 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:23:26] "GET /static/images/michter's_american_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:25:08] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:25:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:25:58] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:29:50] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:30:07] "GET /rate/116 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:30:07] "[36mGET /static/images/michter's_american_.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 21:30:25] "GET /rate/116 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:33:35] "GET /rate/93 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:33:35] "GET /static/images/1792_full_proof.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:05] "[32mPOST /rate/93 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 21:34:06] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:09] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:11] "[32mGET /deleterating/599 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 21:34:12] "GET /rate/93 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:17] "[32mPOST /rate/93 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 21:34:17] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:19] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:34:22] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:39:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:39:11] "GET /rate/81 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:39:11] "GET /static/images/michter's_sour_mash.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:40:05] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:41:12] "GET /rate/115 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:41:12] "GET /static/images/maker's_mark_brt-02.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:41:21] "[32mPOST /rate/115 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 21:41:22] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:47:31] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:47:43] "GET /rate/114 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:47:44] "GET /static/images/maker's_mark_brt-01.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:47:49] "GET /rate/115 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 21:47:49] "[36mGET /static/images/maker's_mark_brt-02.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 21:47:52] "GET /rate/114 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:29:12] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:29:32] "GET /rate/77 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:29:32] "[33mGET /static/images/rabbit_hole_cavehill_sib_kbf.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 22:29:40] "[32mPOST /rate/77 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 22:29:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:30:04] "GET /rate/124 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:30:04] "[33mGET /static/images/rabbit_hole_dareinger.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [16/Mar/2023 22:30:13] "GET /rate/21 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:30:14] "GET /static/images/rabbit_hole_cavehill.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:46:59] "GET /rate/19 HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:47:00] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 22:47:00] "GET /static/images/wild_turkey_101.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:47:00] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 22:47:09] "[32mPOST /rate/19 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [16/Mar/2023 22:47:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 22:47:10] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [16/Mar/2023 23:39:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [16/Mar/2023 23:51:51] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 01:01:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 01:01:41] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 01:01:41] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 01:01:41] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 11:01:07] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 11:01:11] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 11:01:12] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 11:01:12] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 11:01:20] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 11:01:20] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 12:15:54] "GET /rate/93 HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 12:15:54] "GET /static/images/1792_full_proof.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:12] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 20:07:12] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:13] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [17/Mar/2023 20:07:15] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:15] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:23] "GET /rate/47 HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:23] "GET /static/images/eagle_rare.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:45] "[32mPOST /rate/47 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [17/Mar/2023 20:07:45] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:58] "GET /rate/22 HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:07:58] "GET /static/images/early_times_bib.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:13:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:13:43] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:13:43] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:13:43] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 20:13:51] "GET /rate/63 HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:13:51] "GET /static/images/smoke_wagon_ucuf.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:26:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:26:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 20:26:44] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [17/Mar/2023 20:26:44] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 20:58:26] "[32mPOST /rate/63 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [17/Mar/2023 20:58:26] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 21:38:44] "GET /rate/18 HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 21:38:45] "GET /static/images/blue_run_high_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [17/Mar/2023 21:38:51] "[32mPOST /rate/18 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [17/Mar/2023 21:38:52] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:43:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:43:53] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:43:55] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:43:55] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:44:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:06] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:06] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 14:44:10] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:10] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:11] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:11] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 14:44:11] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:42:21] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:21] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:21] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:21] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:26] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:26] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [18/Mar/2023 17:42:26] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:26] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:42:26] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:42:28] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:43:13] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 17:43:13] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:48:12] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:48:19] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:48:19] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:48:19] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:48:21] "GET /rate/161 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:48:21] "GET /rate/161 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:48:21] "[33mGET /static/images/bardstown_origin_bottled_in_bond.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 17:48:22] "GET /rate/161 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 17:48:23] "[33mGET /rate/161/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 18:00:34] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:00:41] "GET /rate/161 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:00:41] "[33mGET /static/images/bardstown_origin_bottled_in_bond.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 18:00:52] "[32mPOST /rate/161 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 18:00:52] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:02] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:02] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:02] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:02] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:10] "GET /rate/161 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:08:11] "[33mGET /static/images/bardstown_origin_bottled_in_bond.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 18:08:17] "[32mPOST /rate/161 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 18:08:17] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 18:52:29] "[32mPOST /rate/161 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 18:52:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 19:28:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 20:24:32] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:32:58] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:34:24] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:34:24] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:34:25] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [18/Mar/2023 20:35:12] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 20:35:12] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:35:21] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:35:21] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [18/Mar/2023 20:35:33] "GET /rate/162 HTTP/1.1" 200 -
+10.10.1.18 - - [18/Mar/2023 20:35:34] "[33mGET /static/images/grahams_fine_ruby_porto.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [18/Mar/2023 20:36:06] "[32mPOST /rate/162 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [18/Mar/2023 20:36:07] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 16:28:08] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 16:28:11] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 16:28:11] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 16:28:12] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [19/Mar/2023 16:28:19] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 16:28:19] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 18:58:34] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [19/Mar/2023 18:58:35] "[33mGET /apple-touch-icon-152x152-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [19/Mar/2023 18:58:35] "[33mGET /apple-touch-icon-152x152.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [19/Mar/2023 18:58:35] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [19/Mar/2023 18:58:35] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [19/Mar/2023 18:58:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 08:27:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:27:48] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:27:48] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:27:48] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:27:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 08:27:57] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:29:00] "GET /rate/64 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:29:00] "GET /static/images/heaven_hill_bib.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 08:29:06] "[32mPOST /rate/64 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 08:29:07] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:04] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:05] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:05] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:05] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:11] "GET /rate/137 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:42:12] "[33mGET /static/images/bardstown_prisoner.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 09:59:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:59:49] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:59:49] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 09:59:49] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:02:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:02:13] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:04:12] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:04:15] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:04:50] "GET /rate/36 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:04:50] "GET /static/images/bardstown_discovery_series_8.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:05:02] "GET /rate/54 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:05:02] "GET /static/images/bardstown_discovery_series_5.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:05:25] "GET /rate/55 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:05:25] "GET /static/images/bardstown_founders.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:06:11] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:06:12] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:06:43] "GET /rate/47 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:06:43] "GET /static/images/eagle_rare.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:07:03] "GET /rate/7 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:07:03] "GET /static/images/1792_small_batch.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:07:33] "GET /rate/4 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:07:33] "GET /static/images/glenfiddich_ipa_cask.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:08:58] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 10:09:01] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:42:04] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:42:04] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:42:04] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:42:04] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:42:19] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:42:19] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:42:19] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:42:19] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:42:20] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 20:42:52] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:42:53] "GET /static/images/blanton's.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:45:02] "[32mPOST /rate/113 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 20:45:03] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:45:03] "[32mPOST /rate/113 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 20:45:03] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:45:03] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:46:17] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:46:18] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:46:18] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:46:18] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:46:18] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:46:25] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 20:46:25] "[36mGET /static/images/blanton's.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 20:46:47] "[32mPOST /rate/113 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 20:46:47] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 21:00:17] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 21:00:17] "GET /static/images/blanton's.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 21:00:28] "[32mPOST /rate/113 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 21:00:28] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:16:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:16:48] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:16:48] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:16:48] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:17:00] "GET /rate/139 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:17:00] "[33mGET /static/images/larceny_barrel_proof_b522.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 22:17:08] "[32mPOST /rate/139 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 22:17:08] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:32:28] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:32:28] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 22:32:29] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 22:32:29] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 22:32:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [20/Mar/2023 22:32:33] "GET /rate/116 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:32:33] "GET /static/images/michter's_american_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:42:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:42:13] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:42:30] "[32mGET /deleterating/611 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 22:42:30] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:42:30] "[36mGET /static/images/blanton's.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [20/Mar/2023 22:42:34] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:43:36] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:43:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:43:44] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:16] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:19] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:22] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:37] "GET /rate/27 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:37] "GET /static/images/maker's_mark_cask_strength_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:44:55] "[32mPOST /rate/27 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 22:44:55] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:45:18] "GET /rate/46 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:45:18] "GET /static/images/buffalo_trace.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:03] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:04] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:10] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:19] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:25] "GET /rate/85 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:26] "GET /static/images/penelope_architect_build_3.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:32] "GET /rate/9 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:32] "GET /static/images/wild_turkey_rare_breed.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:37] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:46] "GET /rate/54 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:46:47] "GET /static/images/bardstown_discovery_series_5.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:25] "GET /rate/21 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:26] "GET /static/images/rabbit_hole_cavehill.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:35] "GET /rate/78 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:35] "GET /static/images/russell’s_single_barrel.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:40] "GET /rate/44 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:47:40] "GET /static/images/old_grand_dad_114.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:48:06] "GET /rate/83 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:48:06] "GET /static/images/weller_special_reserve_.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:48:42] "GET /rate/98 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:48:43] "GET /static/images/bardstown_chateau_de_laubade.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:49:01] "GET /rate/36 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 22:49:01] "GET /static/images/bardstown_discovery_series_8.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 23:13:17] "GET /rate/7 HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 23:13:17] "GET /static/images/1792_small_batch.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [20/Mar/2023 23:13:40] "[32mPOST /rate/7 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [20/Mar/2023 23:13:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 09:47:00] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 09:47:01] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 09:47:01] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 09:47:17] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 09:47:17] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 15:32:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:32:41] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:32:41] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:32:41] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:32:45] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:34:55] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 15:37:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 17:50:13] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 17:50:13] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 17:50:13] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 17:50:26] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 17:50:26] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 18:23:33] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 18:24:54] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:17:54] "GET /rate/78 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:17:55] "GET /static/images/russell’s_single_barrel.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:18:10] "[32mPOST /rate/78 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [21/Mar/2023 21:18:10] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:24:05] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:24:05] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:24:05] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 21:24:05] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 21:24:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 21:24:16] "GET /rate/27 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:24:16] "[36mGET /static/images/maker's_mark_cask_strength_.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 21:24:39] "GET /rate/36 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:24:39] "GET /static/images/bardstown_discovery_series_8.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:25:02] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:25:02] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:25:56] "GET /rate/121 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:25:56] "GET /static/images/wild_turkey_rare_breed.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:27:13] "GET /rate/28 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:27:13] "[33mGET /static/images/baker's_000027860.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 21:38:36] "GET /rate/78 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:38:36] "GET /static/images/russell’s_single_barrel.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 21:40:50] "[32mPOST /rate/78 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [21/Mar/2023 21:40:50] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:04:10] "GET /rate/151 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:04:10] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 22:04:10] "[33mGET /static/images/four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 22:04:10] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 22:04:32] "[32mPOST /rate/151 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [21/Mar/2023 22:04:32] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:04:32] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [21/Mar/2023 22:08:17] "GET /rate/122 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:08:18] "GET /static/images/grander_toasted_oak.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:10] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:21] "GET /rate/151 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:21] "[33mGET /static/images/four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 22:24:29] "[32mPOST /rate/151 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [21/Mar/2023 22:24:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:34] "GET /rate/151 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:24:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:27:45] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:27:58] "GET /rate/151 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:27:59] "[33mGET /static/images/four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 22:34:49] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:34:53] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:35:03] "GET /rate/95 HTTP/1.1" 200 -
+10.10.1.18 - - [21/Mar/2023 22:35:04] "[33mGET /static/images/knob_creek_single_barrel_kentucky_bourbon_festival_.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [21/Mar/2023 22:35:17] "[32mPOST /rate/95 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [21/Mar/2023 22:35:17] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:28:00] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:28:00] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [22/Mar/2023 19:28:00] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:28:00] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:28:04] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:28:13] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:29:19] "GET /rate/136 HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 19:29:20] "[33mGET /static/images/a_midwinter_night's_dram.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [22/Mar/2023 20:51:04] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:05] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:05] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [22/Mar/2023 22:19:06] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:06] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:06] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [22/Mar/2023 22:19:21] "GET /rate/57 HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:21] "GET /static/images/elijah_craig_small_batch.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:19:30] "[32mPOST /rate/57 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [22/Mar/2023 22:19:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:20:10] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:32:50] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:33:01] "GET /rate/3 HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:33:01] "GET /static/images/pinhook_2022_rye_mummy.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [22/Mar/2023 22:37:32] "[32mPOST /rate/3 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [22/Mar/2023 22:37:33] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 07:21:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 07:21:57] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 07:21:57] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 07:21:58] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 07:22:04] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:31] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:31] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:31] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:31] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:34] "GET /rate/12 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:46:34] "GET /static/images/orphan_barrel_fable_and_folly.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:48:06] "GET /rate/52 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:48:07] "GET /static/images/barrell_armida.jpg HTTP/1.1" 200 -
+None
+GET
+571
+None
+GET
+571
+GET
+GET
+GET
+GET
+
+Item no.: 1 --> Item name = bardstown_origin_series Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+None
+GET
+POST
+GET
+None
+None
+GET
+
+Item no.: 1 --> Item name = jameson_caskmates_stout_edition Irish whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+GET
+POST
+GET
+
+Item no.: 1 --> Item name = paniolo Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = paniolo Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = paniolo Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+None
+
+Item no.: 1 --> Item name = paniolo Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+GET
+
+Item no.: 1 --> Item name = paniolo Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+GET
+POST
+GET
+GET
+
+Item no.: 1 --> Item name = ezra_brooks_cask_strength_baxter's_liquor_&_wine Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = ezra_brooks_cask_strength_baxter's_liquor_&_wine Bourbon whiskey
+Evaluating...
+
+Item no.: 1 --> Item name = ezra_brooks_cask_strength_baxter's_liquor_&_wine Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = ezra_brooks_cask_strength_baxter's_liquor_&_wine Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = ezra_brooks_cask_strength_baxter's_liquor_&_wine Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = colonel_eh_taylor_small_batch Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = colonel_eh_taylor_small_batch Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+None
+GET
+585
+GET
+None
+GET
+None
+None
+GET
+GET
+
+Item no.: 1 --> Item name = four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+None
+GET
+GET
+GET
+None
+GET
+POST
+GET
+
+Item no.: 1 --> Item name = drexel_irbon Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+GET
+591
+
+Item no.: 1 --> Item name = drexel_irbon Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = drexel_irbon Blended whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+GET
+
+Item no.: 1 --> Item name = rabbit_hole_cavehill_sib_bourbon_&_beyond Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = bardstown_discovery_series_6 Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = bardstown_discovery_series_6 Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = bardstown_discovery_series_6 Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+None
+None
+None
+None
+GET
+GET
+None
+GET
+599
+on
+GET
+on
+
+Item no.: 1 --> Item name = rabbit_hole_cavehill_sib_kbf Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+on
+
+Item no.: 1 --> Item name = rabbit_hole_dareinger Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+on
+GET
+GET
+GET
+None
+None
+None
+GET
+POST
+GET
+
+Item no.: 1 --> Item name = bardstown_origin_bottled_in_bond Bourbon whiskey
+Evaluating...
+
+Item no.: 1 --> Item name = bardstown_origin_bottled_in_bond Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = bardstown_origin_bottled_in_bond Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+
+Item no.: 1 --> Item name = bardstown_origin_bottled_in_bond Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = bardstown_origin_bottled_in_bond Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+None
+GET
+POST
+GET
+
+Item no.: 1 --> Item name = grahams_fine_ruby_porto Port whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+None
+GET
+GET
+None
+
+Item no.: 1 --> Item name = bardstown_prisoner Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+GET
+GET
+GET
+None
+None
+None
+None
+
+Item no.: 1 --> Item name = larceny_barrel_proof_b522 Bourbon whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+on
+GET
+611
+GET
+GET
+GET
+GET
+on
+None
+GET
+GET
+GET
+None
+
+Item no.: 1 --> Item name = baker's_000027860 Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+
+Item no.: 1 --> Item name = four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+
+Item no.: 1 --> Item name = four_roses_single_barrel_barrel_strength_oesv_barrel_84-3h Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+GET
+
+Item no.: 1 --> Item name = knob_creek_single_barrel_kentucky_bourbon_festival_ Bourbon whiskey
+Evaluating...
+-1
+Image objects data unpacking failed. Please leave a comment with the above error at https://github.com/Joeclinton1/google-images-download/pull/26
+cant find bottle image
+None
+GET
+
+Item no.: 1 --> Item name = a_midwinter_night's_dram Rye whiskey
+Evaluating...
+Starting Download...
+'NoneType' object is not subscriptable
+cant find bottle image
+on
+GET
+None
+GET
+
+Item no.: 1 --> Item name = bardstown_prisoner Bourbon whiskey
+10.10.1.18 - - [23/Mar/2023 15:48:12] "GET /rate/137 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:48:12] "[33mGET /static/images/bardstown_prisoner.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 15:48:34] "GET /rate/113 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 15:48:34] "GET /static/images/blanton's.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:21:35] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:21:35] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 20:21:36] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:21:36] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:25:48] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:25:48] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:25:49] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:25:49] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:25:49] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:25:49] "[33mGET /collection/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:27:41] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:27:42] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:27:46] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:28:06] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:28:20] "GET /rate/163 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:28:20] "GET /rate/163 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:28:20] "[33mGET /static/images/rubicon_creek.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:28:21] "GET /rate/163 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:28:22] "[33mGET /rate/163/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:33:46] "[32mPOST /rate/163 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:33:46] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:33:54] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:33:54] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:33:54] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:33:55] "GET /rate/143 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:33:55] "[33mGET /static/images/cincinnati_distillery_single_barrel_straight.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:33:56] "GET /rate/143 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:33:56] "[33mGET /rate/143/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:03] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:03] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:04] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:04] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:05] "[33mGET /apple-touch-icon-120x120-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:05] "[33mGET /apple-touch-icon-120x120.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:05] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:05] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:30] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:30] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:30] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 20:45:30] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 20:45:31] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:31] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:35] "GET /rate/163 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:35] "[33mGET /static/images/rubicon_creek.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:40] "[32mPOST /rate/163 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:45:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:50] "GET /rate/163 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:45:50] "[33mGET /static/images/rubicon_creek.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:45:57] "[32mPOST /rate/163 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:45:57] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:58:59] "GET /rate/41 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:58:59] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 20:58:59] "GET /static/images/wild_turkey_101_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:58:59] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:08] "[32mPOST /rate/41 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:59:08] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:08] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:12] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:13] "GET /rate/41 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:24] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "GET /rate/41 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "GET /static/images/wild_turkey_101_rye.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:59:27] "GET /rate/41 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:28] "GET /rate/41 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 20:59:28] "[33mGET /rate/41/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 20:59:34] "[32mPOST /rate/41 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 20:59:35] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "GET /rate/11 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "GET /static/images/heaven's_door.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "GET /rate/11 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "GET /rate/11 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:05:57] "[33mGET /rate/11/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:06:23] "[32mPOST /rate/11 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:06:23] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:45:20] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:45:53] "[32mPOST /collection HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:45:53] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:45:56] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:46:16] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:46:16] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 21:46:17] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 21:46:17] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 21:46:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:46:22] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:46:22] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:46:24] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:46:24] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:46:24] "[33mGET /static/images/american_highway_reserve.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:46:25] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:46:26] "[33mGET /rate/164/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:46:34] "[32mPOST /rate/164 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:46:34] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:24] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:24] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:26] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:26] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:33] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:48:33] "[33mGET /static/images/american_highway_reserve.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:48:39] "[32mPOST /rate/164 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:48:39] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:49:26] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:49:27] "[33mGET /static/images/american_highway_reserve.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:49:37] "[32mPOST /rate/164 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:49:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:49:47] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:49:54] "GET /rate/164 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 21:49:54] "[33mGET /static/images/american_highway_reserve.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 21:50:09] "[32mPOST /rate/164 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 21:50:09] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:18:52] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:18:52] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 22:18:52] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:18:52] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 22:18:52] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:18:57] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:19:41] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:19:45] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:19:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:20:25] "GET /rate/46 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:20:25] "GET /static/images/buffalo_trace.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:20:42] "[32mPOST /rate/46 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 22:20:42] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:23:18] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:23:38] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:24:23] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:24:27] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:24:27] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:24:36] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:26:53] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:26:53] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:27:00] "[32mPOST /rate/79 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 22:27:00] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:28:17] "GET /rate/137 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:28:17] "[33mGET /static/images/bardstown_prisoner.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:28:48] "[32mPOST /rate/79 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 22:28:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:04] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:09] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "[36mGET /static/images/knob_creek_12.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "[33mGET /apple-touch-icon.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "[33mGET /apple-touch-icon-precomposed.png HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:10] "[33mGET /rate/79/favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [23/Mar/2023 22:29:24] "[32mPOST /rate/79 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 22:29:24] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:31] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:29:42] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:30:30] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:38:37] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:38:57] "GET /rate/47 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:38:58] "GET /static/images/eagle_rare.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:39:31] "[32mPOST /rate/47 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 22:39:31] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:47:38] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 22:47:45] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 23:05:54] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 23:06:00] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 23:06:00] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [23/Mar/2023 23:06:07] "[32mPOST /rate/79 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [23/Mar/2023 23:06:07] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 08:50:16] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 08:50:16] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 08:50:16] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 08:50:17] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [24/Mar/2023 09:37:11] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:37:11] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 09:37:11] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:37:12] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:37:15] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:37:20] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:48:11] "GET /rate/79 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:48:12] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 09:48:12] "GET /static/images/knob_creek_12.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 09:48:12] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 11:55:23] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 15:30:52] "GET /rate/6 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 15:30:53] "GET /static/images/pinhook_2022_bourbondini.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 15:30:53] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 15:30:53] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 16:25:29] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 16:25:29] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 16:25:29] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 16:25:29] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [24/Mar/2023 17:20:40] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:20:40] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 17:20:40] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:20:40] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 17:28:33] "GET /rate/43 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:28:33] "GET /static/images/woodford_reserve_double_oaked.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:28:50] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:32:37] "GET /rate/80 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:32:37] "GET /static/images/old_forester_1920.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 17:32:48] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:43] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:43] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 19:16:43] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 19:16:43] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:44] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+10.10.1.18 - - [24/Mar/2023 19:16:48] "GET /rate/101 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:48] "GET /static/images/rebel_cask_strength.jpg HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:53] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:56] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:16:58] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:17:07] "GET /editbottle/101 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:17:56] "[32mPOST /editbottle/101 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [24/Mar/2023 19:17:56] "GET /collection HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:17:59] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:18:03] "GET /rate/101 HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:18:03] "[33mGET /static/images/rebel_cask_strength_gs_turkeyfoot_pick.jpg HTTP/1.1[0m" 404 -
+10.10.1.18 - - [24/Mar/2023 19:18:29] "[32mPOST /rate/101 HTTP/1.1[0m" 302 -
+10.10.1.18 - - [24/Mar/2023 19:18:29] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:18:37] "GET /ratings HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:35:58] "GET / HTTP/1.1" 200 -
+10.10.1.18 - - [24/Mar/2023 19:35:58] "[36mGET /static/css/main.css HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 19:35:58] "[36mGET /static/css/middle_new.jpg HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 19:35:59] "[36mGET /static/css/searchicon.png HTTP/1.1[0m" 304 -
+10.10.1.18 - - [24/Mar/2023 19:38:24] "GET /ratings HTTP/1.1" 200 -
