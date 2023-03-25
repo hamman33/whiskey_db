@@ -4,6 +4,12 @@ h1{
 
 h2{
   font-size: 24px;
+  margin-bottom: 0rem;
+}
+
+h3{
+  font-size: 20px;
+  margin-bottom: 0rem;
 }
 
 .background {

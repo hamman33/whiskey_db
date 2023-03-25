@@ -11,7 +11,10 @@
         <h2>Collection Statistics</h2>
         <p>Total Number of Bottles: {{ tBotNum }}</p>
         <p>Total Number of Ratings: {{ tRatNum }}</p>
-        <p>Newest Rating: {{ newRating.bottle_name }} | {{ newRating.drinker }} | {{ newRating.rating }} </p>
+        <h3>Newest Ratings: </h3>
+        {% for rat in newRatings %}
+        <p>{{ rat.bottle_name }} | {{ rat.drinker }} | {{ rat.rating }}</p>
+        {% endfor %}
     </p>
     <br></br>
     <input type="text" id="mainSeachBar" onkeyup="searchCollection()" placeholder="Search for bottles.." title="Type in a bottle name">

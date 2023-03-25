@@ -14,7 +14,7 @@ db = SQLAlchemy(app)
 class Ratings(db.Model):
     rating_num = db.Column(db.Integer, primary_key=True)
     bottle_id = db.Column(db.Integer, nullable=False)
-    rating = db.Column(db.Integer, nullable=False)
+    rating = db.Column(db.Float, nullable=False)
     drinker = db.Column(db.String(50))
     date_drank = db.Column(db.DateTime, default=datetime.now)
     blind = db.Column(db.Boolean, default=False)
@@ -37,9 +37,9 @@ class Collection(db.Model):
 def index():
     tBotNum = db.session.query(Collection).count()
     tRatNum = db.session.query(Ratings).count()
-    newRating = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).first()
+    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
-    return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRating=newRating)
+    return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRatings=newRatings)
 
 
 @app.route('/collection', methods=['POST', 'GET'])
