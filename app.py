@@ -37,7 +37,8 @@ class Collection(db.Model):
 def index():
     tBotNum = db.session.query(Collection).count()
     tRatNum = db.session.query(Ratings).count()
-    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
+    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(1).all()
+    
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRatings=newRatings)
 
