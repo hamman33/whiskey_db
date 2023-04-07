@@ -7,8 +7,18 @@
 {% block body %}
 <div class="maindiv">
     <h1 style="text-align: center">{{ bottle.bottle_name }}</h1>
-
+    {% for message in get_flashed_messages() %}
+    <h2>{{ message }}</h2>
+    {% endfor %}
+    {% if image=='' %}
+    <form action="/uploadpicture/{{bottle.bottle_id}}" method="POST" enctype="multipart/form-data">
+        <label for="img">Select image:</label>
+        <input type="file" id="img" name="img" accept="image/*">
+        <input type="submit">
+    </form>
+    {% else %}
     <img class="icon" src="{{ image }}">
+    {% endif %}
     <div class="center">
         <form action="/rate/{{bottle.bottle_id}}" method="POST">
             <div class="block">

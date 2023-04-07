@@ -1,14 +1,17 @@
 from operator import truediv
-from flask import Flask, render_template, url_for, request, redirect
+from flask import Flask, render_template, url_for, request, redirect, flash
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 from os.path import exists
-from google_images_download import google_images_download
+from werkzeug.utils import secure_filename
 import os
 import json
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
+app.config['UPLOAD_FOLDER'] = './static/images/'
+app.secret_key = "super secret key"
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 db = SQLAlchemy(app)
 
 class Ratings(db.Model):
@@ -37,7 +40,7 @@ class Collection(db.Model):
 def index():
     tBotNum = db.session.query(Collection).count()
     tRatNum = db.session.query(Ratings).count()
-    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(1).all()
+    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
     
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRatings=newRatings)
@@ -129,25 +132,32 @@ def rate(id):
     else:
         image_path = "../static/images/" + str(bottle_obj.bottle_name).replace(" ", "_").lower() + ".jpg"
         if(not exists(image_path[1:])):
-            botname = str(bottle_obj.bottle_name).replace(" ", "_").lower()
-            args = {}
-            args["keywords"] = botname + " " + bottle_obj.whiskey_type + " whiskey"
-            args["limit"] = 1
-            args["format"] = "jpg"
-            args["output_directory"] = "static"
-            args["image_directory"] = "images"
-            args["aspect_ratio"] = "tall"
-            args["time"] = "past-year"
-
-            try:
-                response = google_images_download.googleimagesdownload()
-                absolute_image_paths = response.download(args)
-                os.rename(absolute_image_paths[0][args["keywords"]][0], "./static/images/" + botname + ".jpg")
-            except:
-                print("cant find bottle image")
+            image_path = ''
                 
         all_ratings = Ratings.query.filter_by(bottle_id=id).all()
         return render_template('rate.html', bottle=bottle_obj, image=image_path, ratings=all_ratings)
+
+@app.route('/uploadpicture/<int:id>', methods=['GET', 'POST'])
+def uploadpicture(id):
+    bottle_obj = Collection.query.get_or_404(id)
+    if request.method == 'POST':
+        # Upload file flask
+        uploaded_img = request.files['img']
+        if uploaded_img.filename == '':
+            print("here2")
+            flash('Please select a valid file')
+            return redirect(request.url)
+        # Extracting uploaded data file name
+        botname = str(bottle_obj.bottle_name).replace(" ", "_").lower() + str('.jpg')
+        img_filename = secure_filename(uploaded_img.filename)
+        # Upload file to database (defined uploaded folder in static path)
+        uploaded_img.save(os.path.join(app.config['UPLOAD_FOLDER'], botname))
+ 
+
+    return redirect('/rate/'+str(id))
+
+def allowed_file(filename):     
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 @app.route('/deletebottle/<int:id>')
 def deletebottle(id):
