@@ -35,6 +35,22 @@ class Collection(db.Model):
 
     def __repr__(self):
         return '<bottle %r>' % self.bottle
+    
+class Users(db.Model):
+    user_id = db.Column(db.Integer, primary_key=True)
+    user_name = db.Column(db.String(50))
+    num_ratings = db.Column(db.Integer, default=0)
+    num_blinds = db.Column(db.Integer, default=0)
+    avg_rating = db.Column(db.Float, default=0)
+    avg_blind = db.Column(db.Float, default=0)
+    num_bottles = db.Column(db.Integer, default=0)
+    
+class Owners(db.Model):
+    owner_id = db.Column(db.Integer, primary_key=True)
+    bottle_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+    owns = db.Column(db.Boolean, default=True)
+    
 
 @app.route('/', methods=['POST', 'GET'])
 def index():
@@ -50,7 +66,7 @@ def index():
 def collection():
     print(request.method)
     if request.method == 'POST':
-        bottle_id = max({Collection.query.all()[i].bottle_id for i in range(len(Collection.query.all()))} or [0])+1
+        bottle_id = max(bot.bottle_id for bot in Collection.query.all())+1
         bottle_name = request.form['bottle_name']
         w_type = request.form['type']
         proof = request.form['proof']
@@ -96,9 +112,9 @@ def rate(id):
 
     if request.method == 'POST':
         rating = request.form['rating']
-        name = request.form['name']
+        name = request.form['name'].replace(" ", "")
         blind = request.form.get('blind')
-        print(blind)
+    
         if(blind == 'on'):
             blind = True
         else:
@@ -118,15 +134,10 @@ def rate(id):
             db.session.commit()
         except:
             return 'There was an issue adding the rating'      
-        #update avg ratings
-
-
-        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
-        all_ratings_num = [rate.rating for rate in all_ratings]
         
-        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
-        bottle_obj.num_ratings = len(all_ratings_num)
-        db.session.commit()
+        #update avg ratings
+        updateBottleRating(id)
+        updateUserRatings(name) 
 
         return redirect('/')
     else:
@@ -199,20 +210,46 @@ def deleterating(id):
     except:
         return 'There was a problem deleting the rating'
     
-    bottle_obj = Collection.query.get_or_404(rating_obj.bottle_id)
+    updateBottleRating(rating_obj.bottle_id)
+    updateUserRatings(rating_obj.drinker)
 
-    all_ratings = Ratings.query.filter_by(bottle_id=rating_obj.bottle_id).all()
+    return redirect('/rate/'+str(rating_obj.bottle_id))
+
+def updateBottleRating(id):
+    bottle_obj = Collection.query.get_or_404(id)
+    all_ratings = Ratings.query.filter_by(bottle_id=id).all()
     all_ratings_num = [rate.rating for rate in all_ratings]
-
-    if (len(all_ratings_num)==0):
-        bottle_obj.avg_rating = 0
-    else:    
-        bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
+        
+    bottle_obj.avg_rating = round((sum(all_ratings_num)/len(all_ratings_num)), 1)
     bottle_obj.num_ratings = len(all_ratings_num)
+
     db.session.commit()
 
 
-    return redirect('/rate/'+str(rating_obj.bottle_id))
+def updateUserRatings(name):
+    user = db.session.query(Users.user_id).filter(Users.user_name==name).all()
+    if len(user)==0:
+        addUser(name)
+        updateUserRatings(name)
+    else:
+        u = Users.query.get_or_404(user[0].user_id)
+        ratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.blind).filter(Ratings.drinker==name).all()
+        bratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.blind).filter(Ratings.drinker==name, Ratings.blind==True).all()
+        rats = [rate.rating for rate in ratings]
+        brats = [rate.rating for rate in bratings]
+        u.num_ratings = len(rats)
+        u.num_blinds = len(brats)
+        u.avg_rating = round((sum(rats)/len(rats)), 2)
+        if(len(brats)!=0):
+            u.avg_blind = round((sum(brats)/len(brats)), 2)
+        db.session.commit()
+    
+    
+def addUser(name):
+    uid = max(user.user_id for user in Users.query.all())+1
+    newuser = Users(user_id=uid, user_name=name)
+    db.session.add(newuser)
+    db.session.commit()
 
 def main():
     app.run(debug=False, host="0.0.0.0")
