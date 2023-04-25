@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Users</title>
+{% endblock %}
+
+{% block body %}
+<div class="maindiv">
+    <h1 style="text-align: center">{{ user.user_name }}</h1>
+    <div>
+        <p>Bottles in Collection: {{ user.num_bottles }}</p>
+        <p>Ratings: {{ user.num_ratings }}</p>
+        <p>Average Rating: {{ user.avg_rating }}</p>
+        <p>Blinds: {{ user.num_blinds }}</p>
+        <p>Average Blind: {{ user.avg_blind }}</p>
+    </div>
+    <h1 style="text-align: center">Ratings</h1>
+    <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+    <table class="sortable" id="collectionTable">
+        <tr>
+            <th>Bottle</th>
+            <th>Rating</th>
+            <th>Blind</th>
+            <th>Date</th>
+            <th>Edit</th>
+
+        </tr>
+        {% for rate in ratings %}
+        <tr>
+            <td>{{ rate.bottle_name }}</td>
+            <td>{{ rate.rating }}</td>
+            {% if rate.blind %}
+            <td>X</td>
+            {% else %}
+            <td></td>
+            {% endif %}
+            <td>{{ rate.date_drank.strftime("%b %-d, %Y %I:%M %p") }}</td>
+            <td>
+                <a href="/deleterating/{{rate.rating_num}}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

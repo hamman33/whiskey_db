@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Users</title>
+{% endblock %}
+
+{% block body %}
+<div class="maindiv">
+  <h1 style="text-align: center">Whiskey Collection Users</h1>
+      <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
+      <table class="sortable" id="collectionTable">
+              <tr>
+                  <th>Name</th>
+                  <th>Number of Ratings</th>
+                  <th>Average Rating</th>
+                  <th>Bottles in Collection</th>
+                  <th>Collection Rating</th>
+
+              </tr>
+              {% for user in users %}
+              <tr>
+                  <td>
+                      <a href="/user/{{user.user_id}}">{{ user.user_name }}</a>
+                  </td>
+                  <td>{{ user.num_ratings }}</td>
+                  <td>{{ '%.1f' % user.avg_rating }}</td>
+                  <td>{{ user.num_bottles }}</td>
+                  <td>{{ 0 }}</td>
+              </tr>
+              {% endfor %}
+      </table>
+</div>
+
+{% endblock %}

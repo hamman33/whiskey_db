@@ -91,6 +91,25 @@ def ratings():
         ratings = db.session.query(Ratings.rating_num, Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
         return render_template('ratings.html', ratings=ratings)
 
+@app.route('/users', methods=['POST', 'GET'])
+def users():
+    if request.method == 'POST':
+        #do nothing
+        pass
+    else:
+        users = db.session.query(Users.user_id, Users.user_name, Users.avg_rating, Users.num_ratings, Users.num_bottles).order_by(Users.user_name).all()
+        return render_template('users.html', users=users)
+    
+@app.route('/user/<int:id>', methods=['POST', 'GET'])
+def user(id):
+    user_obj = Users.query.get_or_404(id)
+    if request.method == 'POST':
+        #do nothing
+        pass
+    else:
+        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).filter(Ratings.drinker==user_obj.user_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
+        return render_template('user.html', user=user_obj, ratings=ratings)
+
 
 @app.route('/recentratings')
 def recentratings():
