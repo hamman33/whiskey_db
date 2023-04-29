@@ -13,7 +13,7 @@
         <p>Total Number of Ratings: {{ tRatNum }}</p>
         <h3>Newest Ratings: </h3>
         {% for rat in newRatings %}
-        <p>{{ rat.bottle_name }} | {{ rat.drinker }} | {{ rat.rating }}</p>
+        <p>{{ rat.bottle_name }} | {{ rat.user_name }} | {{ rat.rating }}</p>
         {% endfor %}
     </p>
     <br></br>

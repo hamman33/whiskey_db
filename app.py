@@ -16,9 +16,9 @@ db = SQLAlchemy(app)
 
 class Ratings(db.Model):
     rating_num = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, default=0)
     bottle_id = db.Column(db.Integer, nullable=False)
     rating = db.Column(db.Float, nullable=False)
-    drinker = db.Column(db.String(50))
     date_drank = db.Column(db.DateTime, default=datetime.now)
     blind = db.Column(db.Boolean, default=False)
     def __repr__(self):
@@ -56,7 +56,7 @@ class Owners(db.Model):
 def index():
     tBotNum = db.session.query(Collection).count()
     tRatNum = db.session.query(Ratings).count()
-    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
+    newRatings = db.session.query(Ratings.rating, Users.user_name, Ratings.date_drank, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).join(Users, Ratings.user_id==Users.user_id).order_by(Ratings.date_drank.desc()).limit(5).all()
     
     collection = Collection.query.order_by(Collection.whiskey_type, Collection.bottle_name).all()
     return render_template('index.html', collection=collection, tBotNum=tBotNum, tRatNum=tRatNum, newRatings=newRatings)
@@ -88,7 +88,7 @@ def ratings():
         #do nothing
         pass
     else:
-        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
+        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Users.user_name, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).join(Users, Ratings.user_id==Users.user_id).order_by(Ratings.date_drank.desc()).all()
         return render_template('ratings.html', ratings=ratings)
 
 @app.route('/users', methods=['POST', 'GET'])
@@ -107,16 +107,16 @@ def user(id):
         #do nothing
         pass
     else:
-        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Ratings.drinker, Ratings.date_drank, Ratings.blind, Collection.bottle_name).filter(Ratings.drinker==user_obj.user_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).all()
+        ratings = db.session.query(Ratings.rating_num, Ratings.rating, Users.user_name, Ratings.date_drank, Ratings.blind, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).join(Users, Ratings.user_id==Users.user_id).filter(Users.user_id==user_obj.user_id).order_by(Ratings.date_drank.desc()).all()
         return render_template('user.html', user=user_obj, ratings=ratings)
 
 
 @app.route('/recentratings')
 def recentratings():
-    newRatings = db.session.query(Ratings.rating, Ratings.drinker, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).order_by(Ratings.date_drank.desc()).limit(5).all()
+    newRatings = db.session.query(Ratings.rating, Users.user_name, Collection.bottle_name).join(Collection, Ratings.bottle_id==Collection.bottle_id).join(Users, Ratings.user_id==Users.user_id).order_by(Ratings.date_drank.desc()).limit(5).all()
     rating_string = ""
     for rat in newRatings:
-        rating_string = rating_string + rat.bottle_name + "|" + rat.drinker +  "|" + str(rat.rating) + ";"
+        rating_string = rating_string + rat.bottle_name + "|" + rat.user_name +  "|" + str(rat.rating) + ";"
     
     return rating_string
 
@@ -146,8 +146,13 @@ def rate(id):
 
         if(float(rating) > 10 or float(rating) < 0):
             return 'Please enter a number from 0-10'
+        user = db.session.query(Users.user_id).filter(Users.user_name==name).all()
+        if len(user)==0:
+            uid = addUser(name)
+        else:
+            uid = user[0].user_id
         rate_num_new = max(r.rating_num for r in db.session.query(Ratings.rating_num))+1
-        new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), drinker=name, blind=blind)
+        new_rating = Ratings(rating_num=rate_num_new, bottle_id=bottle_obj.bottle_id, rating=float(rating), user_id=uid, blind=blind)
         try:
             db.session.add(new_rating)
             db.session.commit()
@@ -156,7 +161,7 @@ def rate(id):
         
         #update avg ratings
         updateBottleRating(id)
-        updateUserRatings(name) 
+        updateUserRatings(uid) 
 
         return redirect('/')
     else:
@@ -164,7 +169,7 @@ def rate(id):
         if(not exists(image_path[1:])):
             image_path = ''
                 
-        all_ratings = Ratings.query.filter_by(bottle_id=id).all()
+        all_ratings = db.session.query(Ratings.rating, Users.user_name, Ratings.blind,Ratings.date_drank, Ratings.rating_num).join(Users, Ratings.user_id==Users.user_id).filter(Ratings.bottle_id==id).all()
         return render_template('rate.html', bottle=bottle_obj, image=image_path, ratings=all_ratings)
 
 @app.route('/uploadpicture/<int:id>', methods=['GET', 'POST'])
@@ -230,7 +235,7 @@ def deleterating(id):
         return 'There was a problem deleting the rating'
     
     updateBottleRating(rating_obj.bottle_id)
-    updateUserRatings(rating_obj.drinker)
+    updateUserRatings(rating_obj.user_id)
 
     return redirect('/rate/'+str(rating_obj.bottle_id))
 
@@ -245,23 +250,18 @@ def updateBottleRating(id):
     db.session.commit()
 
 
-def updateUserRatings(name):
-    user = db.session.query(Users.user_id).filter(Users.user_name==name).all()
-    if len(user)==0:
-        addUser(name)
-        updateUserRatings(name)
-    else:
-        u = Users.query.get_or_404(user[0].user_id)
-        ratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.blind).filter(Ratings.drinker==name).all()
-        bratings = db.session.query(Ratings.rating, Ratings.drinker, Ratings.blind).filter(Ratings.drinker==name, Ratings.blind==True).all()
-        rats = [rate.rating for rate in ratings]
-        brats = [rate.rating for rate in bratings]
-        u.num_ratings = len(rats)
-        u.num_blinds = len(brats)
-        u.avg_rating = round((sum(rats)/len(rats)), 2)
-        if(len(brats)!=0):
-            u.avg_blind = round((sum(brats)/len(brats)), 2)
-        db.session.commit()
+def updateUserRatings(id):
+    u = Users.query.get_or_404(id)
+    ratings = db.session.query(Ratings.rating, Ratings.user_id, Ratings.blind).filter(Ratings.user_id==id).all()
+    bratings = db.session.query(Ratings.rating, Ratings.user_id, Ratings.blind).filter(Ratings.user_id==id, Ratings.blind==True).all()
+    rats = [rate.rating for rate in ratings]
+    brats = [rate.rating for rate in bratings]
+    u.num_ratings = len(rats)
+    u.num_blinds = len(brats)
+    u.avg_rating = round((sum(rats)/len(rats)), 2)
+    if(len(brats)!=0):
+        u.avg_blind = round((sum(brats)/len(brats)), 2)
+    db.session.commit()
     
     
 def addUser(name):
@@ -269,6 +269,7 @@ def addUser(name):
     newuser = Users(user_id=uid, user_name=name)
     db.session.add(newuser)
     db.session.commit()
+    return uid
 
 def main():
     app.run(debug=False, host="0.0.0.0")

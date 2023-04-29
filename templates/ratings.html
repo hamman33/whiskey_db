@@ -23,7 +23,7 @@
             {% for rate in ratings %}
             <tr>
                 <td>{{ rate.bottle_name }}</td>
-                <td>{{ rate.drinker }}</td>
+                <td>{{ rate.user_name }}</td>
                 <td>{{ rate.rating }}</td>
                 {% if rate.blind %}
                 <td>X</td>
