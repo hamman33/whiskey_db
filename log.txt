@@ -7,3 +7,8 @@
  * Running on http://127.0.0.1:5000
  * Running on http://10.10.1.26:5000
 [33mPress CTRL+C to quit[0m
+10.10.1.45 - - [24/Apr/2025 09:53:07] "GET / HTTP/1.1" 200 -
+10.10.1.45 - - [24/Apr/2025 09:53:07] "GET /static/css/main.css HTTP/1.1" 200 -
+10.10.1.45 - - [24/Apr/2025 09:53:07] "GET /static/css/middle_new.jpg HTTP/1.1" 200 -
+10.10.1.45 - - [24/Apr/2025 09:53:07] "GET /static/css/searchicon.png HTTP/1.1" 200 -
+10.10.1.45 - - [24/Apr/2025 09:53:07] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
