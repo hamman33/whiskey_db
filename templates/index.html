@@ -19,56 +19,87 @@
     <br></br>
     <input type="text" id="mainSeachBar" onkeyup="searchCollection()" placeholder="Search for bottles.." title="Type in a bottle name">
     {% if collection|length < 1 %} <h4 style="text-align: center">The collection is empty.</h4>
-        {% else %}
-        <script src="https://www.kryogenix.org/code/browser/sorttable/sorttable.js"></script>
-        <table class="sortable" id="collectionTable">
-                <tr>
-                    <th>Bottle</th>
-                    <th>Type</th>
-                    <th>Proof</th>
-                    <th>Average Rating</th>
-                    <th># Ratings</th>
-
-                </tr>
-                {% for bot in collection %}
-                <tr>
-                    <td>
-                        <a href="/rate/{{bot.bottle_id}}">{{ bot.bottle_name }}</a>
-                    </td>
-                    <td>{{ bot.whiskey_type }}</td>
-                    <td> {% if bot.proof.is_integer() %}
-                        {{ '%d' % bot.proof }}
-                        {% else %}
-                        {{ bot.proof}}
-                        {% endif %}
-                    </td>
-                    <td>{{ '%.1f' % bot.avg_rating }}</td>
-                    <td>{{ bot.num_ratings }}</td>
-                </tr>
-                {% endfor %}
-        </table>
-        {% endif %}
+      {% else %}
+      <table id="collectionTable">
+        <thead>
+          <tr>
+            <th>Bottle</th>
+            <th>Type</th>
+            <th>Proof</th>
+            <th>Average Rating</th>
+            <th># Ratings</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for bot in collection %}
+          <tr>
+            <td>
+              <a href="/rate/{{bot.bottle_id}}">{{ bot.bottle_name }}</a>
+            </td>
+            <td>{{ bot.whiskey_type }}</td>
+            <td> {% if bot.proof.is_integer() %}
+              {{ '%d' % bot.proof }}
+              {% else %}
+              {{ bot.proof}}
+              {% endif %}
+            </td>
+            <td>{{ '%.1f' % bot.avg_rating }}</td>
+            <td>{{ bot.num_ratings }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% endif %}
 </div>
 
 <script>
-    function searchCollection() {
-      var input, filter, table, tr, td, i, txtValue;
-      input = document.getElementById("mainSeachBar");
-      filter = input.value.toUpperCase();
-      table = document.getElementById("collectionTable");
-      tr = table.getElementsByTagName("tr");
-      for (i = 0; i < tr.length; i++) {
-        td = tr[i].getElementsByTagName("td")[0];
-        if (td) {
-          txtValue = td.textContent || td.innerText;
-          if (txtValue.toUpperCase().indexOf(filter) > -1) {
-            tr[i].style.display = "";
-          } else {
-            tr[i].style.display = "none";
-          }
-        }       
-      }
+function searchCollection() {
+  var input = document.getElementById("mainSeachBar");
+  var filter = input.value.toUpperCase();
+  var table = document.getElementById("collectionTable");
+  if (!table) return;
+  var tbody = table.tBodies[0];
+  var rows = tbody ? tbody.getElementsByTagName("tr") : [];
+  for (var i = 0; i < rows.length; i++) {
+    var td = rows[i].getElementsByTagName("td")[0];
+    if (td) {
+      var txtValue = td.textContent || td.innerText;
+      rows[i].style.display = txtValue.toUpperCase().indexOf(filter) > -1 ? "" : "none";
     }
-    </script>
+  }
+}
+
+// Simple client-side sorter to avoid external dependency
+(function(){
+  function getCellValue(row, idx) { return (row.children[idx] && (row.children[idx].textContent || row.children[idx].innerText)) || ''; }
+  function comparer(idx, asc) {
+    return function(a,b) {
+      var v1 = getCellValue(a, idx).trim();
+      var v2 = getCellValue(b, idx).trim();
+      var n1 = parseFloat(v1.replace(/[^0-9\.\-]/g,'')), n2 = parseFloat(v2.replace(/[^0-9\.\-]/g,''));
+      if (!isNaN(n1) && !isNaN(n2)) return (n1 - n2) * (asc ? 1 : -1);
+      return v1.localeCompare(v2) * (asc ? 1 : -1);
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function(){
+    var table = document.getElementById('collectionTable');
+    if(!table) return;
+    var headers = table.querySelectorAll('th');
+    headers.forEach(function(th, idx){
+      th.style.cursor = 'pointer';
+      var asc = true;
+      th.addEventListener('click', function(){
+        var tbody = table.tBodies[0];
+        var rows = Array.from(tbody.querySelectorAll('tr'));
+        // keep filtered state: include hidden rows too so they maintain position
+        rows.sort(comparer(idx, asc));
+        asc = !asc;
+        rows.forEach(function(row){ tbody.appendChild(row); });
+      });
+    });
+  });
+})();
+
+</script>
 
 {% endblock %}
