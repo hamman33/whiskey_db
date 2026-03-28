@@ -8,7 +8,8 @@ import os
 import json
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///whiskey.db'
+basedir = os.path.abspath(os.path.dirname(__file__))
+app.config['SQLALCHEMY_DATABASE_URI'] = f"sqlite:///{os.path.join(basedir, 'whiskey.db')}"
 app.config['UPLOAD_FOLDER'] = './static/images/'
 app.secret_key = "super secret key"
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
